@@ -1,5 +1,7 @@
 # Step by step guide to how I built the config
 
+- cmake is a requirement for YouCompleteMe
+
 1. Install an extension manager
 
 Here we are using vundle:
