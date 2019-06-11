@@ -55,24 +55,30 @@ nnoremap <space> za
 " Uncoment to see the docstrings for folded code
 " let g:SimpylFold_docstring_preview=1
 
-" Python indentation
-au BufNewFile,BufRead *.py
+au BufNewFile,BufRead *.py;
     \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
+    \ softtabstop=4
+    \ shiftwidth=4
+    \ textwidth=79
+    \ expandtab
+    \ autoindent
+    \ fileformat=unix
 
-" Full stack development
-au BufNewFile,BufRead *.js,*.html,*.css
+au BufNewFile,BufRead *.js,*.html,*.css;
     \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
+    \ softtabstop=2
+    \ shiftwidth=2
 
-" Flagging unecessary white space
-au BufRead,BufNewFile *.py,*.pyw,*.c,*.h match BadWhitespace /\s\+$/
+" Virtualenv support
+py3 << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  exec(compile(open(activate_this, "rb").read(), activate_this, 'exec'),
+  dict(__file__=activate_this))
+EOF
 
 " UTF-8 Suppoert
 set encoding=utf-8
