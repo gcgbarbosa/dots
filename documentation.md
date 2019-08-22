@@ -13,3 +13,6 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 2. Add .vimrc file from this repo to `home`folder.
 
 3. Enter `vim` and inside vim's command line type `:PluginInstall`
+
+
+`If you are using macosx, make sure to install a new version of vim using brew. Also install python using brew to get the latest version of python as default.`
