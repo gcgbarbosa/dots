@@ -113,10 +113,11 @@ nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
-
-
-
-
 " open nerdtree automatically when vin starts up with no files specified
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+" backspace key was not deleting a couple of stuff
+" this command fixes it
+:set backspace=indent,eol,start
+
