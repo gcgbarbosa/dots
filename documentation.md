@@ -16,9 +16,13 @@ git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
 ## Issues
 
-If you are using macosx, make sure to install a new version of vim using brew. Also install python using brew to get the latest version of python as default.
+If you are using macosx, make sure to install a new version of vim using brew. Also install python using brew to get the latest version of python as default:
 
-You shoud also install `cmake` using `brew cmake`.
+```
+brew install python vim
+```
+
+You shoud also install `cmake` using `brew install cmake`.
 
 Even after installing everything aparently correctly, I was still getting an error from `YouCompleteMe`.
 I solved the issue recompilig the source following the instructions:
