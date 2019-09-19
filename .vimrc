@@ -121,3 +121,17 @@ autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 " this command fixes it
 :set backspace=indent,eol,start
 
+" remapping escape to ESC
+inoremap jk <ESC>
+
+" kill the arrow keys
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <left> <nop>
+nnoremap <right> <nop>
+inoremap <up> <nop>
+inoremap <down> <nop>
+
+
+
+
