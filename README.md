@@ -10,6 +10,6 @@ Also got input from the following places:
 - https://medium.com/swlh/8-vim-tricks-that-will-take-you-from-beginner-to-expert-817ff4870245
 - https://danielmiessler.com/blog/vim-configuration-update-2019-version/
 
-Check the documentation for vim (here)[vim-docs.md]
+Check the documentation for vim [here](vim-doc.md)
 
 # Terminal configs
