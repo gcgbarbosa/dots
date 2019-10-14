@@ -57,18 +57,20 @@ nnoremap <space> za
 " let g:SimpylFold_docstring_preview=1
 
 au BufNewFile,BufRead *.py;
-    \ set tabstop=4
-    \ softtabstop=4
-    \ shiftwidth=4
-    \ textwidth=79
-    \ expandtab
+    \ set \ textwidth=79
     \ autoindent
     \ fileformat=unix
 
-au BufNewFile,BufRead *.js,*.html,*.css;
-    \ set tabstop=2
-    \ softtabstop=2
-    \ shiftwidth=2
+
+filetype plugin indent on
+" On pressing tab, insert 2 spaces
+set expandtab
+" show existing tab with 2 spaces width
+set tabstop=2
+set softtabstop=2
+" when indenting with '>', use 2 spaces width
+set shiftwidth=2
+
 
 " Virtualenv support
 py3 << EOF
