@@ -71,9 +71,6 @@ else
     colorscheme zenburn
 endif
 
-" Ignore pyc files
-let NERDTreeIgnore=['\.pyc$', '\~$'] "ignore files in NERDTree"
-
 " enable vim and system clipboard
 set clipboard=unnamed
 
