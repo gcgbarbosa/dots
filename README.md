@@ -29,3 +29,14 @@ source ~/.bash_profile
 
 Color schemes come from:
 - https://github.com/cmilr/Git-Beautify-For-MacOS-Terminal
+
+## Vim for Scala Resources
+
+I am currently building my environment for scala.
+These are some resources that I am planning to use:
+
+- https://scalameta.org/metals/docs/editors/vim.html
+- http://seenaburns.com/vim-setup-for-scala/
+- https://medium.com/@alandevlin7/neovim-scala-f392bcd8b7de
+- https://github.com/Shougo/deoplete.nvim
+- https://andrew.stwrt.ca/posts/vim-ctags/
