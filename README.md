@@ -48,3 +48,9 @@ Just copy `.ctags` from this repo to `~` (home) and voila.
 It shoud be working.
 You press `ctrl+]` to jump into a function definition.
 To go back you press `ctrl+t`.
+
+## Packaged manager
+
+I need to change the package manager to `plug` because `deoplete` was presenting only two options
+and I picked `plug` because it was first in the list.
+
