@@ -85,7 +85,7 @@ curl -sL install-node.now.sh/lts | sh
 curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 ```
 
-# metals
+### metals
 
 Matals is a language server for scala.
 It enables better scala related languange completion.
