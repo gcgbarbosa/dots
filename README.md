@@ -116,8 +116,12 @@ chmod +x coursier
   --java-opt -Xss4m \
   --java-opt -Xms100m \
   --java-opt -Dmetals.client=coc.nvim \
-  org.scalameta:metals_2.12:0.7.6 \
+  org.scalameta:metals_2.12:0.6.1 \
   -r bintray:scalacenter/releases \
   -r sonatype:snapshots \
   -o /usr/local/bin/metals-vim -f
 ```
+
+Note that here we are installing metals 0.6.1,
+which is not the latest but it is the version that supports scala 2.12.4.
+Scala 2.12.4 is the version used by `processors`.
