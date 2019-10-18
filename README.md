@@ -40,3 +40,11 @@ These are some resources that I am planning to use:
 - https://medium.com/@alandevlin7/neovim-scala-f392bcd8b7de
 - https://github.com/Shougo/deoplete.nvim
 - https://andrew.stwrt.ca/posts/vim-ctags/
+
+### Ctags
+
+Ctags does not support scala, but it turned out to be very ease to setup.
+Just copy `.ctags` from this repo to `~` (home) and voila.
+It shoud be working.
+You press `ctrl+]` to jump into a function definition.
+To go back you press `ctrl+t`.
