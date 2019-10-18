@@ -75,3 +75,49 @@ else
 endif
 let g:deoplete#enable_at_startup = 1
 ```
+
+## coc.nvim
+
+It requires both `yarn` and `nvm`:
+
+```
+curl -sL install-node.now.sh/lts | sh
+curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
+```
+
+# metals
+
+Matals is a language server for scala.
+It enables better scala related languange completion.
+
+To enable it open `vim` and type `:CocConfig` and paste the following:
+
+```
+{
+  "languageserver": {
+    "metals": {
+      "command": "metals-vim",
+      "rootPatterns": ["build.sbt"],
+      "filetypes": ["scala", "sbt"]
+    }
+  }
+}
+```
+  
+Then make sure you have `metals-vim` executable acessible in your `$PATH`.
+
+The following command should do the job:
+
+```
+# Make sure to use coursier v1.1.0-M9 or newer.
+curl -L -o coursier https://git.io/coursier
+chmod +x coursier
+./coursier bootstrap \
+  --java-opt -Xss4m \
+  --java-opt -Xms100m \
+  --java-opt -Dmetals.client=coc.nvim \
+  org.scalameta:metals_2.12:0.7.6 \
+  -r bintray:scalacenter/releases \
+  -r sonatype:snapshots \
+  -o /usr/local/bin/metals-vim -f
+```
