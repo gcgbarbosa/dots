@@ -54,3 +54,22 @@ To go back you press `ctrl+t`.
 I need to change the package manager to `plug` because `deoplete` was presenting only two options
 and I picked `plug` because it was first in the list.
 
+The installation process of `plug` is very simple. Run:
+
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+Then add the following to your `.vimrc`:
+
+```
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
+let g:deoplete#enable_at_startup = 1
+```
