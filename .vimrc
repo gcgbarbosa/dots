@@ -1,34 +1,25 @@
-set nocompatible              " required
-filetype off                  " required
+"set nocompatible              " required
+"filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
+" CHANGING THE PACKAGE MANAGER
+call plug#begin('~/.vim/plugged')
 
-" alternatively, pass a path where Vundle should install plugins
-"call vundle#begin('~/some/path/here')
+" install deoplete
+if has('nvim')
+  Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
+else
+  Plug 'Shougo/deoplete.nvim'
+  Plug 'roxma/nvim-yarp'
+  Plug 'roxma/vim-hug-neovim-rpc'
+endif
 
-" let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
+Plug 'kien/ctrlp.vim'
 
-" add all your plugins here (note older versions of Vundle
-" used Bundle instead of Plugin)
+call plug#end()
 
-" Syntax checking/highlighting
-Plugin 'vim-syntastic/syntastic'
-"" PEP 8 checking for syntax
-Plugin 'nvie/vim-flake8'
-" Color schemes
-"" for GUI
-Plugin 'jnurmine/Zenburn'
-"" for terminal
-Plugin 'altercation/vim-colors-solarized'
-" Super searching
-Plugin 'kien/ctrlp.vim'
 
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+" use deoplete
+let g:deoplete#enable_at_startup = 1
 
 "Line Numbering
 set nu
@@ -53,23 +44,6 @@ set shiftwidth=2
 
 " UTF-8 Suppoert
 set encoding=utf-8
-
-" Auto-complete customizations
-"" make auto-complete line go away after I am done with it
-let g:ycm_autoclose_preview_window_after_completion=1
-"" shortcut for goto definition
-
-" Make code look pretty
-let python_highlight_all=1
-syntax on
-
-" logic for color schemes
-if has('gui_running')
-    set background_dark
-    colorscheme solarized
-else
-    colorscheme zenburn
-endif
 
 " enable vim and system clipboard
 set clipboard=unnamed
