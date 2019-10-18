@@ -61,7 +61,9 @@ curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
-Then add the following to your `.vimrc`:
+## Deoplete
+
+To make deoplete work just add the following to your `.vimrc`:
 
 ```
 if has('nvim')
