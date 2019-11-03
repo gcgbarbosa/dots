@@ -10,6 +10,7 @@ Plug 'kien/ctrlp.vim'
 " enable autocomplete
 Plug 'derekwyatt/vim-scala'
 Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+Plug 'Yggdroot/indentLine'
 
 call plug#end()
 
