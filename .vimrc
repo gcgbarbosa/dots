@@ -63,4 +63,6 @@ nnoremap <right> <nop>
 inoremap <up> <nop>
 inoremap <down> <nop>
 
+" display ^ for tabs and $ at the end of each line
+set list
 
