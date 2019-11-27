@@ -10,6 +10,7 @@
 --regex-scala=/^[ \t]*((abstract|final|sealed|implicit|lazy|override|private[^ ]*|protected)[ \t]*)*val[ \t]+([a-zA-Z0-9_]+)/\3/V,values/
 --regex-scala=/^[ \t]*((abstract|final|sealed|implicit|lazy|override|private[^ ]*|protected)[ \t]*)*var[ \t]+([a-zA-Z0-9_]+)/\3/v,variables/
 --regex-scala=/^[ \t]*package[ \t]+([a-zA-Z0-9_.]+)/\1/p,packages/
+
 --exclude=target
 --exclude=.git
 --exclude=.svn
@@ -21,3 +22,4 @@
 --exclude=*.swp
 --exclude=*.bak
 --exclude=*.tar.*
+--exclude=*.class.*
