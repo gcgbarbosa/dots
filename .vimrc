@@ -66,3 +66,6 @@ inoremap <down> <nop>
 " display ^ for tabs and $ at the end of each line
 set list
 
+" changing color scheme
+syntax on
+colorscheme desert
