@@ -19,6 +19,9 @@ au BufRead,BufNewFile *.sbt set filetype=scala
 
 "Line Numbering
 set nu
+"
+:set relativenumber
+
 
 au BufNewFile,BufRead *.py;
     \ set \ textwidth=79
