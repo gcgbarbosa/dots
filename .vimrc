@@ -72,3 +72,5 @@ set list
 " changing color scheme
 syntax on
 colorscheme desert
+
+let g:indentLine_setConceal = 0
