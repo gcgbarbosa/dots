@@ -70,6 +70,10 @@ curl -sL install-node.now.sh/lts | sh
 curl --compressed -o- -L https://yarnpkg.com/install.sh | bash
 ```
 
+### pythoon support
+
+Check this repo for python support: `https://github.com/neoclide/coc-python`.
+
 ### metals
 
 Matals is a language server for scala.
