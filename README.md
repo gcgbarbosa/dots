@@ -114,3 +114,24 @@ chmod +x coursier
 Note that here we are installing metals 0.6.1,
 which is not the latest but it is the version that supports scala 2.12.4.
 Scala 2.12.4 is the version used by `processors`.
+
+### C support
+
+First install the language server using:
+
+`
+brew install llvm
+`
+
+Do the same thing done for scala to add suport for C.
+
+```
+"languageserver": {
+  "clangd": {
+    "command": "clangd",
+    "args": ["--background-index"],
+    "rootPatterns": ["compile_flags.txt", "compile_commands.json", ".vim/", ".git/", ".hg/"],
+    "filetypes": ["c", "cpp", "objc", "objcpp"]
+  }
+}
+```
