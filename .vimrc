@@ -22,13 +22,6 @@ set nu
 "
 :set relativenumber
 
-
-au BufNewFile,BufRead *.py;
-    \ set \ textwidth=79
-    \ autoindent
-    \ fileformat=unix
-
-
 " enable filetype detection and indent
 filetype plugin indent on
 " On pressing tab, insert 2 spaces
@@ -73,4 +66,8 @@ set list
 syntax on
 colorscheme desert
 
+" this option  avoids hidding stuff from a markdown file
 let g:indentLine_setConceal = 0
+
+
+
