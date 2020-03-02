@@ -119,6 +119,8 @@ Scala 2.12.4 is the version used by `processors`.
 
 First install the language server using:
 
+In manjaro this is done by `pacman -S clang`.
+
 `
 brew install llvm
 `
