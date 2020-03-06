@@ -12,24 +12,6 @@ Also got input from the following places:
 
 Check the documentation for vim [here](vim-doc.md)
 
-## Terminal configs
-
-Color schemes itself are just overwrite ANSI-color values in Terminal.app,
-but you have to enable color formatting in command line utilities to see any formatted output.
-
-Todo it using homebrew:
-
-```
-brew install grc
-echo 'source "`brew --prefix`/etc/grc.bashrc"' >> ~/.bash_profile
-source ~/.bash_profile
-```
-
-### Color schemes
-
-Color schemes come from:
-- https://github.com/cmilr/Git-Beautify-For-MacOS-Terminal
-
 ## Vim for Scala Resources
 
 I am currently building my environment for scala.
@@ -114,6 +96,12 @@ chmod +x coursier
 Note that here we are installing metals 0.6.1,
 which is not the latest but it is the version that supports scala 2.12.4.
 Scala 2.12.4 is the version used by `processors`.
+
+To simply install the last version of metals you can do:
+
+```
+:CocInstall coc-metals
+```
 
 ### C support
 
