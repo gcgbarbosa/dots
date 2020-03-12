@@ -69,5 +69,8 @@ colorscheme desert
 " this option  avoids hidding stuff from a markdown file
 let g:indentLine_setConceal = 0
 
+" enable shit with clipboard (like pasting from ctr+c)
++clipboard
+
 
 
