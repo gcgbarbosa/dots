@@ -39,9 +39,7 @@ set encoding=utf-8
 set clipboard=unnamed
 
 " remap split navigations
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
+nnoremap <C-J> <C-W><C-J> nnoremap <C-K> <C-W><C-K> nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " backspace key was not deleting a couple of stuff
@@ -70,7 +68,12 @@ colorscheme desert
 let g:indentLine_setConceal = 0
 
 " enable shit with clipboard (like pasting from ctr+c)
-+clipboard
+set clipboard=unnamedplus
 
+" set the size of the register
+set viminfo='1000,<1000,s1000,h
 
-
+" using powerline
+set rtp+=/home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/vim/
+set laststatus=2
+set t_Co=256
