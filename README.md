@@ -30,9 +30,89 @@ Resources used to build the scala environment:
 
 ### Installing plug
 
+The installation process of `plug` is very simple. Run:
+
+```
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
+    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+```
+
+- https://github.com/junegunn/vim-plug
 
 
+To install plugins you do 
 
+```
+:PlugInstall
+```
+
+#### Language Support
+
+##### Scala
+
+- https://github.com/ckipp01/coc-metals
+
+Maybe use this:
+
+```
+{
+  "languageserver": {
+    "metals": {
+      "command": "metals-vim",
+      "rootPatterns": ["build.sbt"],
+      "filetypes": ["scala", "sbt"]
+    }
+  }
+}
+```
+
+Then make sure you have `metals-vim` executable acessible in your `$PATH`.
+
+The following command should do the job:
+
+```
+# Make sure to use coursier v1.1.0-M9 or newer.
+curl -L -o coursier https://git.io/coursier
+chmod +x coursier
+./coursier bootstrap \
+  --java-opt -Xss4m \
+  --java-opt -Xms100m \
+  --java-opt -Dmetals.client=coc.nvim \
+  org.scalameta:metals_2.12:0.6.1 \
+  -r bintray:scalacenter/releases \
+  -r sonatype:snapshots \
+  -o /usr/local/bin/metals-vim -f
+```
+
+Note that here we are installing metals 0.6.1,
+which is not the latest but it is the version that supports scala 2.12.4.
+Scala 2.12.4 is the version used by `processors`.
+
+To simply install the last version of metals you can do:
+
+```
+:CocInstall coc-metals
+```
+
+##### Python
+
+- https://github.com/neoclide/coc-python
+
+##### C/C++
+
+Add the following to your `:CocConfig`:
+
+```
+  "languageserver": {
+    "clangd": {
+      "command": "clangd",
+      "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+      "filetypes": ["c", "cpp", "objc", "objcpp"]
+    }
+  }
+``
+
+Note that you need `clang` installed.
 
 ## Shell
 
