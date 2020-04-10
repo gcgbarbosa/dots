@@ -110,7 +110,7 @@ Add the following to your `:CocConfig`:
       "filetypes": ["c", "cpp", "objc", "objcpp"]
     }
   }
-``
+```
 
 Note that you need `clang` installed.
 
