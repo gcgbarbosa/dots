@@ -21,7 +21,8 @@ Resources used to build the scala environment:
 - https://github.com/Shougo/deoplete.nvim
 - https://andrew.stwrt.ca/posts/vim-ctags/
 
-## Tmux
+### Installing
+
 
 ## Shell
 
@@ -44,3 +45,13 @@ fi
 
 Given that my python `site-packages` was
 `/home/gcgbarbosa/anaconda3/lib/python3.7/site-packages`.
+
+## Tmux
+
+Tmux is both my mom and my dad.
+
+The surprisingly new thing here is powerline:
+
+```
+source /home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/tmux/powerline.conf
+
