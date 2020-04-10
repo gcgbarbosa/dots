@@ -123,7 +123,7 @@ To customize the shell I use powerline.
 After installing it I added the following to my `.bashrc`.
 
 ```
-# enabling powerline
+\# enabling powerline
 export TERM="screen-256color"
 if [ -f `which powerline-daemon` ]; then
   powerline-daemon -q
