@@ -2,6 +2,13 @@
 
 ## Ctags
 
+Ctags does not support scala out of the box.
+To enable it,
+copy `.ctags` from this repo to `~` (home) and voila.
+It shoud be working.
+You press `ctrl+]` to jump into a function definition.
+To go back you press `ctrl+t`.
+
 ### How to run Ctags
 
 ## Vim
@@ -21,7 +28,10 @@ Resources used to build the scala environment:
 - https://github.com/Shougo/deoplete.nvim
 - https://andrew.stwrt.ca/posts/vim-ctags/
 
-### Installing
+### Installing plug
+
+
+
 
 
 ## Shell
@@ -54,4 +64,4 @@ The surprisingly new thing here is powerline:
 
 ```
 source /home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/tmux/powerline.conf
-
+```
