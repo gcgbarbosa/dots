@@ -129,10 +129,11 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-#
+# enabling powerline
 export TERM="screen-256color"
-#
-powerline-daemon -q
-POWERLINE_BASH_CONTINUATION=1
-POWERLINE_BASH_SELECT=1
-. /home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
+fi
