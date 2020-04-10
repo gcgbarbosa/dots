@@ -24,3 +24,23 @@ Resources used to build the scala environment:
 ## Tmux
 
 ## Shell
+
+To customize the shell I use powerline.
+
+- https://github.com/powerline/powerline
+
+After installing it I added the following to my `.bashrc`.
+
+```
+# enabling powerline
+export TERM="screen-256color"
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
+fi
+```
+
+Given that my python `site-packages` was
+`/home/gcgbarbosa/anaconda3/lib/python3.7/site-packages`.
