@@ -12,6 +12,9 @@ Plug 'derekwyatt/vim-scala'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'Yggdroot/indentLine'
 
+"
+"Plug 'cjrh/vim-conda'
+
 call plug#end()
 
 " Configuration for vim-scala
@@ -31,6 +34,16 @@ set tabstop=2
 set softtabstop=2
 " when indenting with '>', use 2 spaces width
 set shiftwidth=2
+
+" configs recommended by python
+autocmd BufWritePost *.py call Flake8()
+  set textwidth=79  " lines longer than 79 columns will be broken
+  set shiftwidth=4  " operation >> indents 4 columns; << unindents 4 columns
+  set tabstop=4     " a hard TAB displays as 4 columns
+  set expandtab     " insert spaces when hitting TABs
+  set softtabstop=4 " insert/delete 4 spaces when hitting a TAB/BACKSPACE
+  set shiftround    " round indent to multiple of 'shiftwidth'
+  set autoindent    " align the new line indent with the previous line
 
 " UTF-8 Suppoert
 set encoding=utf-8
@@ -72,6 +85,8 @@ set clipboard=unnamedplus
 
 " set the size of the register
 set viminfo='1000,<1000,s1000,h
+
+let g:python3_host_prog = '/home/gcgbarbosa/anaconda3/bin/python'
 
 " using powerline
 set rtp+=/home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/vim/
