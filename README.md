@@ -125,3 +125,11 @@ Do the same thing done for scala to add suport for C.
   }
 }
 ```
+
+# Step by step guide to how I built the config
+
+1. Install the extesion manager Plug.
+
+2. Add .vimrc file from this repo to `home`folder.
+
+3. Enter `vim` and inside vim's command line type `:PlugInstall`
