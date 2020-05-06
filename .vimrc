@@ -3,16 +3,12 @@
 
 " CHANGING THE PACKAGE MANAGER
 call plug#begin('~/.vim/plugged')
-
-" enable fuzzy search with ctrl+p
-Plug 'kien/ctrlp.vim'
-
-" enable autocomplete
-Plug 'derekwyatt/vim-scala'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
-Plug 'Yggdroot/indentLine'
-
+  " enable fuzzy search with ctrl+p
+  Plug 'kien/ctrlp.vim'
+  " enable autocomplete
+  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " another try to get indent lines
+  Plug 'nathanaelkane/vim-indent-guides'
 call plug#end()
 
 " configuration for vim-scala
@@ -74,9 +70,6 @@ set rtp+=/home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindin
 set laststatus=2
 set t_Co=256
 
-" change conceal behavior for indentLine
-let g:indentLine_setConceal = 0
-
 " COC.VIM 
 " TextEdit might fail if hidden is not set.
 set hidden
@@ -113,4 +106,8 @@ function! s:check_back_space() abort
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
 
-"" end of powerline stuff
+"" end of powerline
+
+" enable vim-indent-guides
+let g:indent_guides_enable_on_vim_startup = 1
+
