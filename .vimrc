@@ -13,22 +13,19 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 Plug 'Yggdroot/indentLine'
 
-"
-"Plug 'cjrh/vim-conda'
-
 call plug#end()
 
-" Configuration for vim-scala
+" configuration for vim-scala
 au BufRead,BufNewFile *.sbt set filetype=scala
 
-"Line Numbering
+" ljine Numbering
 set nu
-"
+" relative numbering
 :set relativenumber
 
 " enable filetype detection and indent
 filetype plugin indent on
-" On pressing tab, insert 2 spaces
+" on pressing tab, insert 2 spaces
 set expandtab
 " show existing tab with 2 spaces width
 set tabstop=2
@@ -39,10 +36,8 @@ set shiftwidth=2
 " UTF-8 Suppoert
 set encoding=utf-8
 
-" enable vim and system clipboard
-set clipboard=unnamed
-
-" remap split navigations
+" remap split navigations - you press ctrl+<direction> to go to the new pane?
+" TODO: i guess i don't need this
 nnoremap <C-J> <C-W><C-J> nnoremap <C-K> <C-W><C-K> nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
@@ -68,18 +63,54 @@ set list
 syntax on
 colorscheme desert
 
-" this option  avoids hidding stuff from a markdown file
-let g:indentLine_setConceal = 0
-
 " enable shit with clipboard (like pasting from ctr+c)
 set clipboard=unnamedplus
 
 " set the size of the register
 set viminfo='1000,<1000,s1000,h
 
-let g:python3_host_prog = '/home/gcgbarbosa/anaconda3/bin/python'
-
-" using powerline
+" powerline
 set rtp+=/home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
+
+" change conceal behavior for indentLine
+let g:indentLine_setConceal = 0
+
+" COC.VIM 
+" TextEdit might fail if hidden is not set.
+set hidden
+
+" Some servers have issues with backup files, see #649.
+set nobackup
+set nowritebackup
+
+" Give more space for displaying messages.
+set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+" Always show the signcolumn, otherwise it would shift the text each time
+" diagnostics appear/become resolved.
+set signcolumn=yes
+
+" Use tab for trigger completion with characters ahead and navigate.
+" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
+" other plugin before putting this into your config.
+inoremap <silent><expr> <TAB>
+      \ pumvisible() ? "\<C-n>" :
+      \ <SID>check_back_space() ? "\<TAB>" :
+      \ coc#refresh()
+inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
+
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
+
+"" end of powerline stuff
