@@ -111,3 +111,6 @@ endfunction
 " enable vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
 
+
+" enable prettier with :Prettier command
+command! -nargs=0 Prettier :CocCommand prettier.formatFile

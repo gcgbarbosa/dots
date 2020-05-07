@@ -114,6 +114,20 @@ Add the following to your `:CocConfig`:
 
 Note that you need `clang` installed.
 
+##### Web development
+
+Install the following plugins for coc:
+
+```
+:CocInstall coc-tsserver coc-eslint coc-json coc-prettier coc-css
+```
+
+coc-tsserver: provides autocompletion for typescript
+coc-esslint: provides linting for javascript
+coc-json: provides json autocompletion
+coc-prettier: provides a wrapper to prettier
+coc-css: language server for css
+
 ## Shell
 
 To customize the shell I use powerline.
