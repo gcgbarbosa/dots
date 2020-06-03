@@ -136,3 +136,7 @@ Put this inside your .tmuxrc:
 ```
 source /home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/tmux/powerline.conf
 ```
+
+Don't forget to replace it with your own address to powerline.
+
+__________________
