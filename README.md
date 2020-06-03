@@ -1,5 +1,15 @@
 # George's dotfiles
 
+# zsh
+
+Everything starts with good terminal.
+
+I used [this](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) to install it.
+
+```
+sudo apt install zsh
+
+
 ## Ctags
 
 Ctags does not support scala out of the box.
@@ -9,16 +19,13 @@ It shoud be working.
 You press `ctrl+]` to jump into a function definition.
 To go back you press `ctrl+t`.
 
-### How to run Ctags
-
 ## Vim
 
-I need to give credits to:
+Here are some resurces I used to build this dotfiles:
+
 - https://realpython.com/vim-and-python-a-match-made-in-heaven/
 - https://medium.com/swlh/8-vim-tricks-that-will-take-you-from-beginner-to-expert-817ff4870245
 - https://danielmiessler.com/blog/vim-configuration-update-2019-version/
-
-**scala resources**
 
 Resources used to build the scala environment:
 
@@ -30,6 +37,7 @@ Resources used to build the scala environment:
 
 ### Installing plug
 
+Plug is a plugin manager for vim.
 The installation process of `plug` is very simple. Run:
 
 ```
@@ -52,23 +60,9 @@ To install plugins you do
 
 - https://github.com/ckipp01/coc-metals
 
-Maybe use this:
-
-```
-{
-  "languageserver": {
-    "metals": {
-      "command": "metals-vim",
-      "rootPatterns": ["build.sbt"],
-      "filetypes": ["scala", "sbt"]
-    }
-  }
-}
-```
-
 Then make sure you have `metals-vim` executable acessible in your `$PATH`.
 
-The following command should do the job:
+The following command should do the job of installing metals-vim:
 
 ```
 # Make sure to use coursier v1.1.0-M9 or newer.
@@ -86,13 +80,11 @@ chmod +x coursier
 
 Note that here we are installing metals 0.6.1,
 which is not the latest but it is the version that supports scala 2.12.4.
-Scala 2.12.4 is the version used by `processors`.
+Scala 2.12.4 is the version used by `processors`.https://github.com/scalameta/coc-metals
 
 To simply install the last version of metals you can do:
 
-```
-:CocInstall coc-metals
-```
+- https://github.com/scalameta/coc-metals
 
 ##### Python
 
@@ -134,27 +126,15 @@ To customize the shell I use powerline.
 
 - https://github.com/powerline/powerline
 
-After installing it I added the following to my `.bashrc`.
-
-```
-\# enabling powerline
-export TERM="screen-256color"
-if [ -f `which powerline-daemon` ]; then
-  powerline-daemon -q
-  POWERLINE_BASH_CONTINUATION=1
-  POWERLINE_BASH_SELECT=1
-  . /home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
-fi
-```
-
-Given that my python `site-packages` was
-`/home/gcgbarbosa/anaconda3/lib/python3.7/site-packages`.
+zsh seems to automaticaly detect powerline.
 
 ## Tmux
 
 Tmux is both my mom and my dad.
 
 The surprisingly new thing here is powerline:
+
+Put this inside your .tmuxrc:
 
 ```
 source /home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/tmux/powerline.conf
