@@ -4,11 +4,7 @@
 
 Everything starts with good terminal.
 
-I used [this](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) to install it.
-
-```
-sudo apt install zsh
-
+I used [this](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) tutorial to install it.
 
 ## Ctags
 
