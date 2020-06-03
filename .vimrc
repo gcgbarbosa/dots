@@ -41,8 +41,10 @@ nnoremap <C-H> <C-W><C-H>
 " this command fixes it
 :set backspace=indent,eol,start
 
+" this is not needed anymore.
+" esc now is capslock
 " remapping escape to ESC
-inoremap jk <ESC>
+" inoremap jk <ESC>
 
 " kill the arrow keys
 nnoremap <up> <nop>
