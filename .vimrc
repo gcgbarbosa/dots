@@ -57,7 +57,7 @@ set list
 
 " changing color scheme
 syntax on
-colorscheme desert
+colorscheme monokai
 
 " enable shit with clipboard (like pasting from ctr+c)
 set clipboard=unnamedplus
@@ -78,8 +78,9 @@ set hidden
 set nobackup
 set nowritebackup
 
-" Give more space for displaying messages.
-set cmdheight=2
+" Give more space for displaying messages. (this originally was 2, but I did
+" not like the way it looks.
+set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -105,7 +106,6 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
-
 "" end of powerline
 
 " enable vim-indent-guides
