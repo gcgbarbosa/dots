@@ -65,10 +65,11 @@ inoremap <down> <nop>
 set list
 
 " changing color scheme
-syntax on
+let g:solarized_termcolors=256
+syntax enable
 set background=dark
 colorscheme solarized
-let g:solarized_termcolors=256
+
 
 " enable shit with clipboard (like pasting from ctr+c)
 set clipboard=unnamedplus
