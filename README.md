@@ -1,5 +1,11 @@
 # George's dotfiles
 
+# Expected result
+
+![image](docs/current.png)
+
+______
+
 # zsh
 
 Everything starts with good terminal.
