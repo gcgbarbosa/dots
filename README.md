@@ -4,11 +4,7 @@
 
 Everything starts with good terminal.
 
-I used [this](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) to install it.
-
-```
-sudo apt install zsh
-
+I used [this](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) tutorial to install it.
 
 ## Ctags
 
@@ -80,7 +76,8 @@ chmod +x coursier
 
 Note that here we are installing metals 0.6.1,
 which is not the latest but it is the version that supports scala 2.12.4.
-Scala 2.12.4 is the version used by `processors`.https://github.com/scalameta/coc-metals
+Scala 2.12.4 is the version used by `processors`.
+https://github.com/scalameta/coc-metals
 
 To simply install the last version of metals you can do:
 
@@ -114,11 +111,11 @@ Install the following plugins for coc:
 :CocInstall coc-tsserver coc-eslint coc-json coc-prettier coc-css
 ```
 
-coc-tsserver: provides autocompletion for typescript
-coc-esslint: provides linting for javascript
-coc-json: provides json autocompletion
-coc-prettier: provides a wrapper to prettier
-coc-css: language server for css
+- coc-tsserver: provides autocompletion for typescript
+- coc-esslint: provides linting for javascript
+- coc-json: provides json autocompletion
+- coc-prettier: provides a wrapper to prettier
+- coc-css: language server for css
 
 ## Shell
 
@@ -139,3 +136,7 @@ Put this inside your .tmuxrc:
 ```
 source /home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/tmux/powerline.conf
 ```
+
+Don't forget to replace it with your own address to powerline.
+
+__________________
