@@ -9,6 +9,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " another try to get indent lines
   Plug 'nathanaelkane/vim-indent-guides'
+  " integration with github.
+  " this seemed to be a better option than the popular gigtutter
+  Plug 'mhinz/vim-signify'
+  " to use git without leaving vim
+  Plug 'tpope/vim-fugitive'
 call plug#end()
 
 " configuration for vim-scala
@@ -82,7 +87,7 @@ set nowritebackup
 
 " Give more space for displaying messages. (this originally was 2, but I did
 " not like the way it looks.
-set cmdheight=1
+" set cmdheight=1
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
@@ -118,3 +123,9 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 
 " ignore .gitignore files when using ctrl+p
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+
+" configuration for vim-signify
+" default update time 4000s is not got for async update
+set updatetime=100
+
+
