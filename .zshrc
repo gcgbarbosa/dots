@@ -33,7 +33,4 @@ export TERM="xterm-256color"
 powerline-daemon -q
 . /home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
 
-
-set -o vi
-
 source /usr/share/powerlevel9k/powerlevel9k.zsh-theme
