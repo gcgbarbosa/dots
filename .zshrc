@@ -34,6 +34,8 @@ unset __conda_setup
 #powerline-daemon -q
 #. /home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
 
+# fix bug with clearning stuff
+export TERMINFO=/usr/share/terminfo
 
 # zplug plugin manager
 source ~/.zplug/init.zsh
