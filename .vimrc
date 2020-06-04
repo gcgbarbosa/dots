@@ -14,6 +14,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'mhinz/vim-signify'
   " to use git without leaving vim
   Plug 'tpope/vim-fugitive'
+  " changed appearence
+  Plug 'altercation/vim-colors-solarized'
 call plug#end()
 
 " configuration for vim-scala
@@ -64,7 +66,9 @@ set list
 
 " changing color scheme
 syntax on
-colorscheme monokai
+set background=dark
+colorscheme solarized
+let g:solarized_termcolors=256
 
 " enable shit with clipboard (like pasting from ctr+c)
 set clipboard=unnamedplus
