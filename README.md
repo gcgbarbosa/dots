@@ -1,6 +1,6 @@
 # George's dotfiles
 
-# Expected result
+**Expected result**
 
 ![image](docs/current.png)
 
