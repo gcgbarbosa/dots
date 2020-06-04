@@ -94,9 +94,12 @@ set nowritebackup
 " not like the way it looks.
 " set cmdheight=1
 
+" configuration for vim-signify
+" default update time 4000s is not got for async update
+
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
-set updatetime=300
+set updatetime=100
 
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
@@ -129,8 +132,5 @@ command! -nargs=0 Prettier :CocCommand prettier.formatFile
 " ignore .gitignore files when using ctrl+p
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 
-" configuration for vim-signify
-" default update time 4000s is not got for async update
-set updatetime=100
 
 
