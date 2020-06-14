@@ -7,10 +7,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'kien/ctrlp.vim'
   " enable autocomplete
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " prettier solution
+  Plug 'sbdchd/neoformat'
   " another try to get indent lines
   Plug 'nathanaelkane/vim-indent-guides'
   " integration with github.
-  " this seemed to be a better option than the popular gigtutter
   Plug 'mhinz/vim-signify'
   " to use git without leaving vim
   Plug 'tpope/vim-fugitive'
@@ -78,9 +79,9 @@ set clipboard=unnamedplus
 set viminfo='1000,<1000,s1000,h
 
 " powerline
-set rtp+=/home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/vim/
 set laststatus=2
 set t_Co=256
+set rtp+=/home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/vim
 
 " COC.VIM 
 " TextEdit might fail if hidden is not set.
