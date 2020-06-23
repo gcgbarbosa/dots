@@ -1,14 +1,9 @@
-"set nocompatible              " required
-"filetype off                  " required
-
 " CHANGING THE PACKAGE MANAGER
 call plug#begin('~/.vim/plugged')
   " enable fuzzy search with ctrl+p
-  Plug 'kien/ctrlp.vim'
+  Plug 'ctrlpvim/ctrlp.vim'
   " enable autocomplete
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  " prettier solution
-  Plug 'sbdchd/neoformat'
   " another try to get indent lines
   Plug 'nathanaelkane/vim-indent-guides'
   " integration with github.
@@ -17,12 +12,14 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   " changed appearence
   Plug 'altercation/vim-colors-solarized'
+  " prettier
+  Plug 'sbdchd/neoformat'
 call plug#end()
 
 " configuration for vim-scala
 au BufRead,BufNewFile *.sbt set filetype=scala
 
-" ljine Numbering
+" line Numbering
 set nu
 " relative numbering
 :set relativenumber
@@ -41,18 +38,14 @@ set shiftwidth=2
 set encoding=utf-8
 
 " remap split navigations - you press ctrl+<direction> to go to the new pane?
-" TODO: i guess i don't need this
-nnoremap <C-J> <C-W><C-J> nnoremap <C-K> <C-W><C-K> nnoremap <C-L> <C-W><C-L>
+nnoremap <C-J> <C-W><C-J> 
+nnoremap <C-K> <C-W><C-K> 
+nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
 
 " backspace key was not deleting a couple of stuff
 " this command fixes it
 :set backspace=indent,eol,start
-
-" this is not needed anymore.
-" esc now is capslock
-" remapping escape to ESC
-" inoremap jk <ESC>
 
 " kill the arrow keys
 nnoremap <up> <nop>
@@ -70,7 +63,6 @@ let g:solarized_termcolors=256
 syntax enable
 set background=dark
 colorscheme solarized
-
 
 " enable shit with clipboard (like pasting from ctr+c)
 set clipboard=unnamedplus
@@ -122,16 +114,16 @@ function! s:check_back_space() abort
   let col = col('.') - 1
   return !col || getline('.')[col - 1]  =~# '\s'
 endfunction
+
+" Add `:Format` command to format current buffer.
+command! -nargs=0 Format :call CocAction('format')
 "" end of powerline
 
 " enable vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
 
-" enable prettier with :Prettier command
-command! -nargs=0 Prettier :CocCommand prettier.formatFile
-
 " ignore .gitignore files when using ctrl+p
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-
-
+" set the folder to the ctags file
+set tags=.tags;
 
