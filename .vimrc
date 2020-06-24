@@ -12,8 +12,6 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   " changed appearence
   Plug 'altercation/vim-colors-solarized'
-  " prettier
-  Plug 'sbdchd/neoformat'
 call plug#end()
 
 " configuration for vim-scala
@@ -126,4 +124,3 @@ let g:indent_guides_enable_on_vim_startup = 1
 let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 " set the folder to the ctags file
 set tags=.tags;
-
