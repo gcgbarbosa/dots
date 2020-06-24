@@ -2,6 +2,26 @@
 
 ![image](docs/current.png)
 
+### Features
+
+1. **Vim**
+- Fuzzy finder
+- Autocompletion
+- Code formatter
+- Linter
+- Theming
+- powerline
+- git integration
+
+2. **Tmux**
+- powerline
+- +plugins
+
+3. **zsh**
+- syntax highlighting
+- more completions
+- theming
+
 ______
 
 ## ZSH 
