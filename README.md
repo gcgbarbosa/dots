@@ -1,23 +1,29 @@
 # George's dotfiles
 
-**Expected result**
-
 ![image](docs/current.png)
 
 ______
 
-# zsh
+## ZSH 
 
 Everything starts with good terminal.
 
 I used [this](https://github.com/ohmyzsh/ohmyzsh/wiki/Installing-ZSH) tutorial to install it.
 
+To customize the shell I use powerline.
+
+- https://github.com/powerline/powerline
+
+I use it with Vim and Tmux.
+
 ## Ctags
+
+Ctags is used to "jump into" functions/classes.
 
 Ctags does not support scala out of the box.
 To enable it,
 copy `.ctags` from this repo to `~` (home) and voila.
-It shoud be working.
+It shoud be working after you generate the tag list for the repository.
 You press `ctrl+]` to jump into a function definition.
 To go back you press `ctrl+t`.
 
@@ -37,84 +43,57 @@ Resources used to build the scala environment:
 - https://github.com/Shougo/deoplete.nvim
 - https://andrew.stwrt.ca/posts/vim-ctags/
 
-### Installing plug
+### Managing plugins for vim
 
 Plug is a plugin manager for vim.
 The installation process of `plug` is very simple. Run:
 
-```
+```bash
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 ```
 
 - https://github.com/junegunn/vim-plug
 
-
-To install plugins you do 
+To install plugins we run the following inside vim:
 
 ```
 :PlugInstall
 ```
 
-#### Language Support
+### Language Support
 
-##### Scala
+#### Scala
 
-- https://github.com/ckipp01/coc-metals
-
-Then make sure you have `metals-vim` executable acessible in your `$PATH`.
-
-The following command should do the job of installing metals-vim:
+Simply install coc-metals.
+I am also using metals to format scala code using the following inside vim:
 
 ```
-# Make sure to use coursier v1.1.0-M9 or newer.
-curl -L -o coursier https://git.io/coursier
-chmod +x coursier
-./coursier bootstrap \
-  --java-opt -Xss4m \
-  --java-opt -Xms100m \
-  --java-opt -Dmetals.client=coc.nvim \
-  org.scalameta:metals_2.12:0.6.1 \
-  -r bintray:scalacenter/releases \
-  -r sonatype:snapshots \
-  -o /usr/local/bin/metals-vim -f
+:Format
 ```
-
-Note that here we are installing metals 0.6.1,
-which is not the latest but it is the version that supports scala 2.12.4.
-Scala 2.12.4 is the version used by `processors`.
-https://github.com/scalameta/coc-metals
-
-To simply install the last version of metals you can do:
 
 - https://github.com/scalameta/coc-metals
 
-##### Python
+#### Python
+
+Install coc-python to get Python support.
 
 - https://github.com/neoclide/coc-python
 
-##### C/C++
+#### C/C++
 
-Add the following to your `:CocConfig`:
+Install coc-clangd to get C++/C autocompletion.
 
-```
-  "languageserver": {
-    "clangd": {
-      "command": "clangd",
-      "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
-      "filetypes": ["c", "cpp", "objc", "objcpp"]
-    }
-  }
-```
+- https://github.com/clangd/coc-clangd
 
 Note that you need `clang` installed.
 
-##### Web development
+#### Web development
 
-Install the following plugins for coc:
+I use the following plugins for coc:
 
 ```
-:CocInstall coc-tsserver coc-eslint coc-json coc-prettier coc-css
+:CocInstall coc-tsserver coc-eslint coc-json coc-prettier coc-css coc-html
 ```
 
 - coc-tsserver: provides autocompletion for typescript
@@ -122,14 +101,7 @@ Install the following plugins for coc:
 - coc-json: provides json autocompletion
 - coc-prettier: provides a wrapper to prettier
 - coc-css: language server for css
-
-## Shell
-
-To customize the shell I use powerline.
-
-- https://github.com/powerline/powerline
-
-zsh seems to automaticaly detect powerline.
+- coc-html: language server for html
 
 ## Tmux
 
@@ -143,6 +115,6 @@ Put this inside your .tmuxrc:
 source /home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/tmux/powerline.conf
 ```
 
-Don't forget to replace it with your own address to powerline.
+Don't forget to replace it with your own `site-packages` folder path.
 
-__________________
+______
