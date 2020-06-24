@@ -4,23 +4,16 @@
 
 ### Features
 
-1. **Vim**
-- Fuzzy finder
-- Autocompletion
-- Code formatter
-- Linter
-- Theming
-- powerline
-- git integration
+|   1. **Vim**    | 2. **Tmux**  |    3. **zsh**      |
+|-----------------|--------------|--------------------|
+| Fuzzy finder    | powerline    | syntax highlight   |
+| Autocompletion  | +plugins     | more completitions |
+| Code formatter  |              | theming            |
+| Linter          |              |                    |
+| Theming         |              |                    |
+| powerline       |              |                    |
+| git integration |              |                    |
 
-2. **Tmux**
-- powerline
-- +plugins
-
-3. **zsh**
-- syntax highlighting
-- more completions
-- theming
 
 ______
 
