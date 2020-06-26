@@ -56,6 +56,9 @@ Resources used to build the scala environment:
 - https://github.com/Shougo/deoplete.nvim
 - https://andrew.stwrt.ca/posts/vim-ctags/
 
+This tutorial explains how to run VIM from scratch:
+- https://github.com/ycm-core/YouCompleteMe/wiki/Building-Vim-from-source
+
 ### Managing plugins for vim
 
 Plug is a plugin manager for vim.
