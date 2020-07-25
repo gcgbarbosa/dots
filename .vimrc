@@ -1,7 +1,5 @@
 " CHANGING THE PACKAGE MANAGER
 call plug#begin('~/.vim/plugged')
-  " enable fuzzy search with ctrl+p
-  Plug 'ctrlpvim/ctrlp.vim'
   " enable autocomplete
   Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " another try to get indent lines
@@ -12,6 +10,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   " changed appearence
   Plug 'altercation/vim-colors-solarized'
+  " 
+  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+  Plug 'junegunn/fzf.vim'
 call plug#end()
 
 " configuration for vim-scala
@@ -121,6 +122,9 @@ command! -nargs=0 Format :call CocAction('format')
 let g:indent_guides_enable_on_vim_startup = 1
 
 " ignore .gitignore files when using ctrl+p
-let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
+" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
 " set the folder to the ctags file
 set tags=.tags;
+
+" fzf
+nnoremap <C-p> :<C-u>GFiles<CR> 
