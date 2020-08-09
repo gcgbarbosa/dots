@@ -38,21 +38,32 @@ unset __conda_setup
 # fix bug with clearning stuff
 export TERMINFO=/usr/share/terminfo
 
+# enable coursier
+export PATH="$PATH:/home/gcgbarbosa/.local/share/coursier/bin"
+
+# enable starship
+eval "$(starship init zsh)"
+
 # zplug plugin manager
 source ~/.zplug/init.zsh
 # Async for zsh, used by pure
 zplug "mafredri/zsh-async", from:github, use:"async.zsh"
+# supports oh-my-zsh-plugins
+zplug "plugins/git", from:oh-my-zsh
 # example of how to import stuff cfrom oh-my-zsh
-#zplug "lib/completion", from:oh-my-zsh
-# # Syntax highlighting for commands, load last
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-# # suggests commands as you type based on your history and completions
-zplug "zsh-users/zsh-autosuggestions"
 # # makes directory listings more readable
 zplug "supercrabtree/k"
-# # more completitions
-zplug "zsh-users/zsh-completitions"
-# # Theme!
-zplug "sindresorhus/pure", use:pure.zsh, from:github, as:theme
+# install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
 #
-zplug load
+zplug load --verbose
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/gcgbarbosa/.sdkman"
+[[ -s "/home/gcgbarbosa/.sdkman/bin/sdkman-init.sh" ]] && source "/home/gcgbarbosa/.sdkman/bin/sdkman-init.sh"
