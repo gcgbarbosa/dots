@@ -1,11 +1,6 @@
 [user]
   email = gcgbarbosa@gmail.com
   name = gcgbarbosa
-[alias]
-  cm = commit -m
-  p = push
-  s = status
-  d = diff
 [filter "lfs"]
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
