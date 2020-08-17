@@ -43,7 +43,8 @@ export PATH="$PATH:/home/gcgbarbosa/.local/share/coursier/bin"
 
 # enable starship
 eval "$(starship init zsh)"
-
+# turn off all beeps
+unsetopt BEEP
 # zplug plugin manager
 source ~/.zplug/init.zsh
 # Async for zsh, used by pure
@@ -62,7 +63,9 @@ if ! zplug check --verbose; then
   fi
 fi
 #
-zplug load --verbose
+#
+#zplug load --verbose
+zplug load
 
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/home/gcgbarbosa/.sdkman"

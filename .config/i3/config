@@ -150,3 +150,12 @@ bindsym $mod+r mode "resize"
   #status_command i3status
 #}
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# colors
+# class                 border  backgr. text    indicator child_border
+client.focused          #000000 #607d8b #ffffff #000000   #000000
+client.focused_inactive #000000 #263238 #ffffff #000000   #000000
+client.unfocused        #000000 #eceff1 #000000 #000000   #000000
+client.urgent           #000000 #ba000d #ffffff #000000   #000000
+client.placeholder      #000000 #ba000d #ffffff #000000   #000000
+client.background       #000000

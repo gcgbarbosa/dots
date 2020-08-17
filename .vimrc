@@ -36,12 +36,6 @@ set shiftwidth=2
 " UTF-8 Suppoert
 set encoding=utf-8
 
-" remap split navigations - you press ctrl+<direction> to go to the new pane?
-nnoremap <C-J> <C-W><C-J> 
-nnoremap <C-K> <C-W><C-K> 
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
 " backspace key was not deleting a couple of stuff
 " this command fixes it
 :set backspace=indent,eol,start

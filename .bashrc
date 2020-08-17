@@ -139,3 +139,7 @@ if [ -f `which powerline-daemon` ]; then
 fi
 
 set -o vi
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/gcgbarbosa/.sdkman"
+[[ -s "/home/gcgbarbosa/.sdkman/bin/sdkman-init.sh" ]] && source "/home/gcgbarbosa/.sdkman/bin/sdkman-init.sh"
