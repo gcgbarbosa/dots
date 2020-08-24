@@ -53,8 +53,14 @@ zplug "mafredri/zsh-async", from:github, use:"async.zsh"
 zplug "plugins/git", from:oh-my-zsh
 # example of how to import stuff cfrom oh-my-zsh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
-# # makes directory listings more readable
+# makes directory listings more readable
 zplug "supercrabtree/k"
+# show a message "you should use" for an alias
+zplug "MichaelAquilina/zsh-you-should-use"
+# install z to jump into directories
+zplug "agkozak/zsh-z"
+# autocompletion
+zplug "marlonrichert/zsh-autocomplete"
 # install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "

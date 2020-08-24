@@ -10,9 +10,11 @@ call plug#begin('~/.vim/plugged')
   Plug 'tpope/vim-fugitive'
   " changed appearence
   Plug 'altercation/vim-colors-solarized'
-  " 
+  " fuzzy finder
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  " rainbow parenthesis
+  Plug 'luochen1990/rainbow'
 call plug#end()
 
 " configuration for vim-scala
@@ -21,7 +23,7 @@ au BufRead,BufNewFile *.sbt set filetype=scala
 " line Numbering
 set nu
 " relative numbering
-:set relativenumber
+set relativenumber
 
 " enable filetype detection and indent
 filetype plugin indent on
@@ -38,7 +40,7 @@ set encoding=utf-8
 
 " backspace key was not deleting a couple of stuff
 " this command fixes it
-:set backspace=indent,eol,start
+set backspace=indent,eol,start
 
 " kill the arrow keys
 nnoremap <up> <nop>
@@ -122,3 +124,6 @@ set tags=.tags;
 
 " fzf
 nnoremap <C-p> :<C-u>GFiles<CR> 
+
+" enable rainbow
+let g:rainbow_active = 1
