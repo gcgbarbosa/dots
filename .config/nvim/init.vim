@@ -15,6 +15,8 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
   " rainbow parenthesis
   Plug 'luochen1990/rainbow'
+  "
+  "Plug 'rbong/vim-crystalline'
 call plug#end()
 
 " configuration for vim-scala
@@ -34,7 +36,6 @@ set tabstop=2
 set softtabstop=2
 " when indenting with '>', use 2 spaces width
 set shiftwidth=2
-
 " UTF-8 Suppoert
 set encoding=utf-8
 
@@ -65,12 +66,7 @@ set clipboard=unnamedplus
 " set the size of the register
 set viminfo='1000,<1000,s1000,h
 
-" powerline
-set laststatus=2
-set t_Co=256
-set rtp+=/home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/vim
-
-" COC.VIM 
+" COC.VIM
 " TextEdit might fail if hidden is not set.
 set hidden
 

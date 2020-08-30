@@ -30,13 +30,8 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# enabling powerline
-#export TERM="xterm-256color"
-#powerline-daemon -q
-#. /home/gcgbarbosa/anaconda3/lib/python3.7/site-packages/powerline/bindings/bash/powerline.sh
-
 # fix bug with clearning stuff
-export TERMINFO=/usr/share/terminfo
+#export TERMINFO=/usr/share/terminfo
 
 # enable coursier
 export PATH="$PATH:/home/gcgbarbosa/.local/share/coursier/bin"
@@ -45,6 +40,7 @@ export PATH="$PATH:/home/gcgbarbosa/.local/share/coursier/bin"
 eval "$(starship init zsh)"
 # turn off all beeps
 unsetopt BEEP
+
 # zplug plugin manager
 source ~/.zplug/init.zsh
 # Async for zsh, used by pure
