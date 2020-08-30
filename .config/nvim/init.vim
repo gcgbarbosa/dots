@@ -52,8 +52,7 @@ inoremap <up> <nop>
 inoremap <down> <nop>
 
 " display ^ for tabs and $ at the end of each line
-set list
-
+set list listchars=tab:>\ ,trail:-,eol:$,nbsp:+
 " changing color scheme
 let g:solarized_termcolors=256
 syntax enable

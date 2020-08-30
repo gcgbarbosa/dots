@@ -44,11 +44,13 @@ unsetopt BEEP
 # zplug plugin manager
 source ~/.zplug/init.zsh
 # Async for zsh, used by pure
-zplug "mafredri/zsh-async", from:github, use:"async.zsh"
-# supports oh-my-zsh-plugins
-zplug "plugins/git", from:oh-my-zsh
+zplug "mafredri/zsh-async", from:github, defer:0
+# Load completion library for those sweet [tab] squares
+zplug "lib/completion", from:oh-my-zsh
 # example of how to import stuff cfrom oh-my-zsh
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+# supports oh-my-zsh-plugins
+zplug "plugins/git", from:oh-my-zsh
 # makes directory listings more readable
 zplug "supercrabtree/k"
 # show a message "you should use" for an alias
@@ -56,7 +58,7 @@ zplug "MichaelAquilina/zsh-you-should-use"
 # install z to jump into directories
 zplug "agkozak/zsh-z"
 # autocompletion
-zplug "marlonrichert/zsh-autocomplete"
+#zplug "marlonrichert/zsh-autocomplete"
 # install plugins if there are plugins that have not been installed
 if ! zplug check --verbose; then
   printf "Install? [y/N]: "
