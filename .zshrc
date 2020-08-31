@@ -12,9 +12,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# yarn stuff
-export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
-
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!
 __conda_setup="$('/home/gcgbarbosa/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
@@ -30,16 +27,10 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
-# fix bug with clearning stuff
-#export TERMINFO=/usr/share/terminfo
-
-# enable coursier
-export PATH="$PATH:/home/gcgbarbosa/.local/share/coursier/bin"
-
 # enable starship
 eval "$(starship init zsh)"
 # turn off all beeps
-unsetopt BEEP
+#unsetopt BEEP
 
 # zplug plugin manager
 source ~/.zplug/init.zsh
@@ -71,6 +62,3 @@ fi
 #zplug load --verbose
 zplug load
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/home/gcgbarbosa/.sdkman"
-[[ -s "/home/gcgbarbosa/.sdkman/bin/sdkman-init.sh" ]] && source "/home/gcgbarbosa/.sdkman/bin/sdkman-init.sh"

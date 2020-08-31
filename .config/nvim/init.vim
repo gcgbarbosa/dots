@@ -60,7 +60,7 @@ set background=dark
 colorscheme solarized
 
 " enable shit with clipboard (like pasting from ctr+c)
-set clipboard=unnamedplus
+set clipboard=unnamed
 
 " set the size of the register
 set viminfo='1000,<1000,s1000,h
@@ -72,13 +72,6 @@ set hidden
 " Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
-
-" Give more space for displaying messages. (this originally was 2, but I did
-" not like the way it looks.
-" set cmdheight=1
-
-" configuration for vim-signify
-" default update time 4000s is not got for async update
 
 " Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
 " delays and poor user experience.
