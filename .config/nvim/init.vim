@@ -60,7 +60,7 @@ set background=dark
 colorscheme solarized
 
 " enable shit with clipboard (like pasting from ctr+c)
-set clipboard=unnamed
+set clipboard+=unnamedplus
 
 " set the size of the register
 set viminfo='1000,<1000,s1000,h

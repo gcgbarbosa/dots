@@ -1,5 +1,5 @@
 # replace caps and esc
-xmodmap ~/.speedswaper
+[[ -f ~/.Xmodmap ]] && xmodmap ~/.Xmodmap
 
 # compatibility with nvim
 export VISUAL=nvim

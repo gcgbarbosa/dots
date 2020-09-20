@@ -30,7 +30,7 @@ unset __conda_setup
 # enable starship
 eval "$(starship init zsh)"
 # turn off all beeps
-#unsetopt BEEP
+unsetopt BEEP
 
 # zplug plugin manager
 source ~/.zplug/init.zsh
