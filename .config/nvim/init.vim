@@ -100,7 +100,10 @@ endfunction
 
 " Add `:Format` command to format current buffer.
 command! -nargs=0 Format :call CocAction('format')
-"" end of powerline
+
+" powerline
+" let g:powerline_pycmd="py3"
+" set rtp+=/home/gcgbarbosa/anaconda3/lib/python3.8/site-packages/powerline/bindings/vim
 
 " enable vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
