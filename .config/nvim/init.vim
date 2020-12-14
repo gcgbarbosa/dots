@@ -8,8 +8,9 @@ call plug#begin('~/.vim/plugged')
   Plug 'mhinz/vim-signify'
   " to use git without leaving vim
   Plug 'tpope/vim-fugitive'
-  " changed appearence
-  Plug 'altercation/vim-colors-solarized'
+  " gruvbox colorscheme. Seems to work the best for me.
+  Plug 'morhetz/gruvbox'
+  " Plug 'altercation/vim-colors-solarized'
   " fuzzy finder
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
@@ -54,10 +55,10 @@ inoremap <down> <nop>
 " display ^ for tabs and $ at the end of each line
 set list listchars=tab:>\ ,trail:-,eol:$,nbsp:+
 " changing color scheme
-let g:solarized_termcolors=256
+" let g:solarized_termcolors=256
 syntax enable
 set background=dark
-colorscheme solarized
+colorscheme gruvbox
 
 " enable shit with clipboard (like pasting from ctr+c)
 set clipboard+=unnamedplus
@@ -118,3 +119,6 @@ nnoremap <C-p> :<C-u>GFiles<CR>
 
 " enable rainbow
 let g:rainbow_active = 1
+
+
+
