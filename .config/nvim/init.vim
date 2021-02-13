@@ -1,3 +1,6 @@
+" leader key
+let g:mapleader = "\<Space>"
+
 " CHANGING THE PACKAGE MANAGER
 call plug#begin('~/.vim/plugged')
   " enable autocomplete
@@ -16,9 +19,10 @@ call plug#begin('~/.vim/plugged')
   Plug 'junegunn/fzf.vim'
   " rainbow parenthesis
   Plug 'luochen1990/rainbow'
-  "
-  "Plug 'rbong/vim-crystalline'
+  " note system
+  Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 call plug#end()
+
 
 " configuration for vim-scala
 au BufRead,BufNewFile *.sbt set filetype=scala
@@ -37,7 +41,7 @@ set tabstop=2
 set softtabstop=2
 " when indenting with '>', use 2 spaces width
 set shiftwidth=2
-" UTF-8 Suppoert
+" UTF-8 support 
 set encoding=utf-8
 
 " backspace key was not deleting a couple of stuff
@@ -54,6 +58,7 @@ inoremap <down> <nop>
 
 " display ^ for tabs and $ at the end of each line
 set list listchars=tab:>\ ,trail:-,eol:$,nbsp:+
+
 " changing color scheme
 " let g:solarized_termcolors=256
 syntax enable
@@ -66,59 +71,23 @@ set clipboard+=unnamedplus
 " set the size of the register
 set viminfo='1000,<1000,s1000,h
 
-" COC.VIM
-" TextEdit might fail if hidden is not set.
-set hidden
+" set ctags
+set tags=./tags,tags;$HOME
 
-" Some servers have issues with backup files, see #649.
-set nobackup
-set nowritebackup
+" fzf
+" nnoremap <C-p> :<C-u>Files<CR> 
 
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
-set updatetime=100
-
-" Don't pass messages to |ins-completion-menu|.
-set shortmess+=c
-
-" Always show the signcolumn, otherwise it would shift the text each time
-" diagnostics appear/become resolved.
-set signcolumn=yes
-
-" Use tab for trigger completion with characters ahead and navigate.
-" NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
-" other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ <SID>check_back_space() ? "\<TAB>" :
-      \ coc#refresh()
-inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
-
-function! s:check_back_space() abort
-  let col = col('.') - 1
-  return !col || getline('.')[col - 1]  =~# '\s'
-endfunction
-
-" Add `:Format` command to format current buffer.
-command! -nargs=0 Format :call CocAction('format')
-
-" powerline
-" let g:powerline_pycmd="py3"
-" set rtp+=/home/gcgbarbosa/anaconda3/lib/python3.8/site-packages/powerline/bindings/vim
+let g:vimwiki_list = [{'path': '~/repos/gcgbarbosa/life/wiki'}]
 
 " enable vim-indent-guides
 let g:indent_guides_enable_on_vim_startup = 1
 
-" ignore .gitignore files when using ctrl+p
-" let g:ctrlp_user_command = ['.git', 'cd %s && git ls-files . -co --exclude-standard', 'find %s -type f']
-" set the folder to the ctags file
-set tags=.tags;
+" import coc config
+source ~/.config/nvim/coc.vim
 
-" fzf
-nnoremap <C-p> :<C-u>GFiles<CR> 
 
-" enable rainbow
-let g:rainbow_active = 1
+" import coc config
+source ~/.config/nvim/fzf.vim
 
 
 

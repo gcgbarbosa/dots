@@ -1,3 +1,13 @@
+##
+# RZR does not use ripgrep by default
+# We need to tel FZF to use ripgrep with FZF_DEFAULT
+#
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m --height 50% --border'
+fi
+
+##
 # Lines configured by zsh-newuser-install
 #
 HISTFILE=~/.histfile
@@ -48,6 +58,8 @@ zplug "supercrabtree/k"
 zplug "MichaelAquilina/zsh-you-should-use"
 # install z to jump into directories
 zplug "agkozak/zsh-z"
+# suggests commands as you type based on your history and completions
+zplug "zsh-users/zsh-autosuggestions"
 # autocompletion
 #zplug "marlonrichert/zsh-autocomplete"
 # install plugins if there are plugins that have not been installed
