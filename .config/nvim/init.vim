@@ -1,28 +1,9 @@
+
+" import coc config
+source ~/.config/nvim/plugins.vim
+
 " leader key
 let g:mapleader = "\<Space>"
-
-" CHANGING THE PACKAGE MANAGER
-call plug#begin('~/.vim/plugged')
-  " enable autocomplete
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
-  " another try to get indent lines
-  Plug 'nathanaelkane/vim-indent-guides'
-  " integration with github.
-  Plug 'mhinz/vim-signify'
-  " to use git without leaving vim
-  Plug 'tpope/vim-fugitive'
-  " gruvbox colorscheme. Seems to work the best for me.
-  Plug 'morhetz/gruvbox'
-  " Plug 'altercation/vim-colors-solarized'
-  " fuzzy finder
-  Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-  Plug 'junegunn/fzf.vim'
-  " rainbow parenthesis
-  Plug 'luochen1990/rainbow'
-  " note system
-  Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
-call plug#end()
-
 
 " configuration for vim-scala
 au BufRead,BufNewFile *.sbt set filetype=scala
@@ -66,16 +47,13 @@ set background=dark
 colorscheme gruvbox
 
 " enable shit with clipboard (like pasting from ctr+c)
-set clipboard+=unnamedplus
+" set clipboard+=unnamedplus
 
 " set the size of the register
 set viminfo='1000,<1000,s1000,h
 
 " set ctags
 set tags=./tags,tags;$HOME
-
-" fzf
-" nnoremap <C-p> :<C-u>Files<CR> 
 
 let g:vimwiki_list = [{'path': '~/repos/gcgbarbosa/life/wiki'}]
 

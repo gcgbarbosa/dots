@@ -1,5 +1,8 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/gcgbarbosa/.tmux'
+let g:netrw_dirhist_6='/home/gcgbarbosa/.tmux-themepack'
+let g:netrw_dirhist_5='/home/gcgbarbosa/.tmux'
 let g:netrw_dirhist_4='/home/gcgbarbosa/repos/research/ner/new-pulearning/model'
 let g:netrw_dirhist_3='/home/gcgbarbosa/cors-test'
 let g:netrw_dirhist_2='/home/gcgbarbosa/repos/research/ner/new-pulearning/data'
