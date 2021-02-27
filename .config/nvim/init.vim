@@ -67,5 +67,6 @@ source ~/.config/nvim/coc.vim
 " import coc config
 source ~/.config/nvim/fzf.vim
 
-
+let g:airline_powerline_fonts = 1
+let g:airline#extensions#tabline#enabled = 1
 
