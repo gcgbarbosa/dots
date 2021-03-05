@@ -11,8 +11,8 @@ fi
 # Lines configured by zsh-newuser-install
 #
 HISTFILE=~/.histfile
-HISTSIZE=1000
-SAVEHIST=1000
+HISTSIZE=10000
+SAVEHIST=10000
 setopt appendhistory autocd extendedglob notify
 # End of lines configured by zsh-newuser-install
 # The following lines were added by compinstall
@@ -48,8 +48,6 @@ source ~/.zplug/init.zsh
 zplug "mafredri/zsh-async", from:github, defer:0
 # Load completion library for those sweet [tab] squares
 zplug "lib/completion", from:oh-my-zsh
-# example of how to import stuff cfrom oh-my-zsh
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # supports oh-my-zsh-plugins
 zplug "plugins/git", from:oh-my-zsh
 # makes directory listings more readable
@@ -60,6 +58,8 @@ zplug "MichaelAquilina/zsh-you-should-use"
 zplug "agkozak/zsh-z"
 # suggests commands as you type based on your history and completions
 zplug "zsh-users/zsh-autosuggestions"
+# 
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
 # autocompletion
 #zplug "marlonrichert/zsh-autocomplete"
 # install plugins if there are plugins that have not been installed
@@ -69,7 +69,6 @@ if ! zplug check --verbose; then
     echo; zplug install
   fi
 fi
-#
 #
 #zplug load --verbose
 zplug load

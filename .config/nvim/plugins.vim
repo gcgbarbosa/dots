@@ -21,6 +21,8 @@ call plug#begin('~/.vim/plugged')
   " 
   Plug 'vim-airline/vim-airline'
   Plug 'vim-airline/vim-airline-themes'
+  " generates vim-airline colors to tmux line
+  Plug 'edkolev/tmuxline.vim'
   "
 call plug#end()
 

@@ -63,10 +63,10 @@ let g:indent_guides_enable_on_vim_startup = 1
 " import coc config
 source ~/.config/nvim/coc.vim
 
-
 " import coc config
 source ~/.config/nvim/fzf.vim
 
 let g:airline_powerline_fonts = 1
 let g:airline#extensions#tabline#enabled = 1
-
+let g:airline_solarized_bg='dark'
+let g:airline_theme='solarized'
