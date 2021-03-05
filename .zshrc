@@ -42,6 +42,11 @@ eval "$(starship init zsh)"
 # turn off all beeps
 unsetopt BEEP
 
+# Import colorscheme from 'wal' asynchronously
+# &   # Run the process in the background.
+# ( ) # Hide shell job control messages.
+(cat ~/.cache/wal/sequences &)
+
 # zplug plugin manager
 source ~/.zplug/init.zsh
 # Async for zsh, used by pure
@@ -60,6 +65,7 @@ zplug "agkozak/zsh-z"
 zplug "zsh-users/zsh-autosuggestions"
 # 
 zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
 # autocompletion
 #zplug "marlonrichert/zsh-autocomplete"
 # install plugins if there are plugins that have not been installed

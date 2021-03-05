@@ -9,13 +9,15 @@ call plug#begin('~/.vim/plugged')
   " to use git without leaving vim
   Plug 'tpope/vim-fugitive'
   " gruvbox colorscheme. Seems to work the best for me.
-  Plug 'morhetz/gruvbox'
+  " Plug 'morhetz/gruvbox'
   " Plug 'altercation/vim-colors-solarized'
+  Plug 'dylanaraps/wal.vim'
   " fuzzy finder
   Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
   Plug 'junegunn/fzf.vim'
+  " TODO: find another
   " rainbow parenthesis
-  Plug 'luochen1990/rainbow'
+  " Plug 'luochen1990/rainbow'
   " note system
   Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
   " 

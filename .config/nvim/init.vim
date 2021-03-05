@@ -40,13 +40,7 @@ inoremap <down> <nop>
 " display ^ for tabs and $ at the end of each line
 set list listchars=tab:>\ ,trail:-,eol:$,nbsp:+
 
-" changing color scheme
-" let g:solarized_termcolors=256
-syntax enable
-set background=dark
-colorscheme gruvbox
-
-" enable shit with clipboard (like pasting from ctr+c)
+" use system clipboard (like pasting from ctr+c)
 " set clipboard+=unnamedplus
 
 " set the size of the register
@@ -66,7 +60,17 @@ source ~/.config/nvim/coc.vim
 " import coc config
 source ~/.config/nvim/fzf.vim
 
+" enable fonts
 let g:airline_powerline_fonts = 1
+" enable buffer line
 let g:airline#extensions#tabline#enabled = 1
-let g:airline_solarized_bg='dark'
-let g:airline_theme='solarized'
+" set theme
+let g:airline_theme='wal'
+" changing color scheme
+" let g:solarized_termcolors=256
+" set the background dark
+" let g:airline_solarized_bg='dark'
+
+syntax enable
+" set background=dark
+colorscheme wal
