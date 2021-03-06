@@ -42,6 +42,12 @@ eval "$(starship init zsh)"
 # turn off all beeps
 unsetopt BEEP
 
+# exa aliases
+alias l='exa'
+alias la='exa -a'
+alias ll='exa -lah'
+alias ls='exa --color=auto'
+
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
@@ -55,8 +61,6 @@ zplug "mafredri/zsh-async", from:github, defer:0
 zplug "lib/completion", from:oh-my-zsh
 # supports oh-my-zsh-plugins
 zplug "plugins/git", from:oh-my-zsh
-# makes directory listings more readable
-zplug "supercrabtree/k"
 # show a message "you should use" for an alias
 zplug "MichaelAquilina/zsh-you-should-use"
 # install z to jump into directories

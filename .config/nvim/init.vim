@@ -22,7 +22,7 @@ set tabstop=2
 set softtabstop=2
 " when indenting with '>', use 2 spaces width
 set shiftwidth=2
-" UTF-8 support 
+" UTF-8 support
 set encoding=utf-8
 
 " backspace key was not deleting a couple of stuff
@@ -51,8 +51,14 @@ set tags=./tags,tags;$HOME
 
 let g:vimwiki_list = [{'path': '~/repos/gcgbarbosa/life/wiki'}]
 
-" enable vim-indent-guides
-let g:indent_guides_enable_on_vim_startup = 1
+" vimwiki
+syntax on
+set nocompatible
+filetype plugin on
+" compatibility with indent lines
+let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*', '*.wiki']
+let g:indentLine_fileTypeExclude = ['vimwiki']
+let g:indentLine_bufTypeExclude = ['help', 'terminal', 'vimwiki']
 
 " import coc config
 source ~/.config/nvim/coc.vim
@@ -60,17 +66,13 @@ source ~/.config/nvim/coc.vim
 " import coc config
 source ~/.config/nvim/fzf.vim
 
-" enable fonts
-let g:airline_powerline_fonts = 1
-" enable buffer line
-let g:airline#extensions#tabline#enabled = 1
-" set theme
-let g:airline_theme='wal'
-" changing color scheme
-" let g:solarized_termcolors=256
-" set the background dark
-" let g:airline_solarized_bg='dark'
+" get rid of insert
+set noshowmode
 
-syntax enable
-" set background=dark
+" enable fonts
+let g:lightline = {
+  \ 'colorscheme': 'wal',
+  \ 'separator': { 'left': '', 'right': '' },
+  \ 'subseparator': { 'left': '', 'right': '' }
+  \ }
 colorscheme wal
