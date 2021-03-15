@@ -37,8 +37,8 @@ nnoremap <right> <nop>
 inoremap <up> <nop>
 inoremap <down> <nop>
 
-" display ^ for tabs and $ at the end of each line
-set list listchars=tab:>\ ,trail:-,eol:$,nbsp:+
+" display >\ for tabs and ¶ at the end of each line
+set list listchars=tab:>\ ,trail:-,eol:¶,nbsp:+
 
 " use system clipboard (like pasting from ctr+c)
 " set clipboard+=unnamedplus
@@ -49,14 +49,18 @@ set viminfo='1000,<1000,s1000,h
 " set ctags
 set tags=./tags,tags;$HOME
 
+" vimwiki
+"" disable vimwiki markdown on other files but wiki files
+" autocmd FileType vimwiki set ft=markdown
+" set path
 let g:vimwiki_list = [{'path': '~/repos/gcgbarbosa/life/wiki'}]
-
 " vimwiki
 syntax on
 set nocompatible
 filetype plugin on
-" compatibility with indent lines
+" indent lines
 let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*', '*.wiki']
+" compatibility with vimwiki
 let g:indentLine_fileTypeExclude = ['vimwiki']
 let g:indentLine_bufTypeExclude = ['help', 'terminal', 'vimwiki']
 
