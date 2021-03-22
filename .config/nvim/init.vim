@@ -29,14 +29,6 @@ set encoding=utf-8
 " this command fixes it
 set backspace=indent,eol,start
 
-" kill the arrow keys
-nnoremap <up> <nop>
-nnoremap <down> <nop>
-nnoremap <left> <nop>
-nnoremap <right> <nop>
-inoremap <up> <nop>
-inoremap <down> <nop>
-
 " display >\ for tabs and ¶ at the end of each line
 set list listchars=tab:>\ ,trail:-,eol:¶,nbsp:+
 

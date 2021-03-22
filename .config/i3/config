@@ -152,10 +152,10 @@ bindsym $mod+r mode "resize"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # disable window tilebars
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 1
 # setting gaps
-gaps outer 10
-gaps inner 10
+gaps outer 4
+gaps inner 8
 
 # Set colors from Xresources
 # Change 'color7' and 'color2' to whatever colors you want i3 to use 
