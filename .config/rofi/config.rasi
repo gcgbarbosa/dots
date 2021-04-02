@@ -1,9 +1,10 @@
 configuration {
-  width: 1000;
+  width: 600;
   show-icons: true;
-  lines: 15;
+  icon-theme: "papirus";
+  lines: 12;
   columns: 1;
-  font: "Lexend 12";
+  font: "Lexend Deca 12";
   bw: 0;
   padding: 100;
   eh: 1;

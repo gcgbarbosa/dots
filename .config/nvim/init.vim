@@ -62,6 +62,11 @@ source ~/.config/nvim/coc.vim
 " import coc config
 source ~/.config/nvim/fzf.vim
 
+" enable rainbow parenthesis
+let g:rainbow_active = 1 "set to 0 if you want to enable it later via :RainbowToggle
+" compatibility with vimwiki
+autocmd FileType vimwiki :RainbowToggleOff
+
 " get rid of insert
 set noshowmode
 
@@ -72,3 +77,4 @@ let g:lightline = {
   \ 'subseparator': { 'left': '', 'right': '' }
   \ }
 colorscheme wal
+
