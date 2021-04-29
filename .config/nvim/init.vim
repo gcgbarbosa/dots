@@ -51,10 +51,10 @@ syntax on
 set nocompatible
 filetype plugin on
 " indent lines
-let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*', '*.wiki']
+let g:indentLine_bufNameExclude = ['_.*', 'NERD_tree.*', '*.wiki', '*.tex']
 " compatibility with vimwiki
-let g:indentLine_fileTypeExclude = ['vimwiki']
-let g:indentLine_bufTypeExclude = ['help', 'terminal', 'vimwiki']
+let g:indentLine_fileTypeExclude = ['vimwiki', 'tex']
+let g:indentLine_bufTypeExclude = ['help', 'terminal', 'vimwiki', 'tex']
 
 " import coc config
 source ~/.config/nvim/coc.vim
@@ -70,11 +70,9 @@ autocmd FileType vimwiki :RainbowToggleOff
 " get rid of insert
 set noshowmode
 
-" enable fonts
+" use lightline pywal colors
 let g:lightline = {
   \ 'colorscheme': 'wal',
-  \ 'separator': { 'left': '', 'right': '' },
-  \ 'subseparator': { 'left': '', 'right': '' }
   \ }
 colorscheme wal
 

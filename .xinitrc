@@ -23,3 +23,6 @@ wal -R
 
 # run i3
 exec i3
+
+# run blue light filter
+redshift -l 32.22174:-110.92648

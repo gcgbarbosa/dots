@@ -32,6 +32,11 @@ floating_modifier $mod
 # start a terminal
 bindsym $mod+Return exec kitty
 
+# take a screenshot
+bindsym $mod+p exec maim --select ~/imgs/ss/`date +%F-%T`.png
+# record gif
+bindsym $mod+Shift+p exec peek
+
 # kill focused window
 bindsym $mod+Shift+q kill
 
@@ -48,7 +53,6 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
 
 # move focused window
 bindsym $mod+Shift+h move left
