@@ -1,5 +1,5 @@
 ##
-# RZR does not use ripgrep by default
+# FZF does not use ripgrep by default
 # We need to tel FZF to use ripgrep with FZF_DEFAULT
 #
 if type rg &> /dev/null; then
@@ -35,7 +35,14 @@ else
     fi
 fi
 unset __conda_setup
+## leave conda deactivated by default
+# some system apps do not work if conda are activated by default
+conda deactivate
 # <<< conda initialize <<<
+
+## make pytorch RNN's replicable
+# explanation here: https://pytorch.org/docs/stable/generated/torch.nn.RNN.html#torch.nn.RNN
+export CUBLAS_WORKSPACE_CONFIG=:16:8
 
 # enable starship
 eval "$(starship init zsh)"
