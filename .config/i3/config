@@ -180,4 +180,4 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 client.background       $bg
 
 # start redshift
-exec redshift
+exec --no-startup-id redshift-gtk
