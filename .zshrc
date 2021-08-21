@@ -49,11 +49,18 @@ eval "$(starship init zsh)"
 # turn off all beeps
 unsetopt BEEP
 
-# exa aliases
+# aliases
+## exa aliases
 alias l='exa'
 alias la='exa -a'
 alias ll='exa -lah'
 alias ls='exa --color=auto'
+##
+
+alias ls='exa --color=auto'
+alias wce='sudo modprobe dslr-webcam'
+alias wclc='gphoto2 --list-config'
+alias wcr='gphoto2 --stdout --capture-movie | ffmpeg -hwaccel nvdec -c:v mjpeg_cuvid -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video0'
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
