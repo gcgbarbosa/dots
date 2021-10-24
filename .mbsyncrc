@@ -1,0 +1,73 @@
+Create Both
+Expunge Both
+SyncState *
+
+IMAPAccount gmail 
+Host imap.gmail.com
+User gcgbarbosa@gmail.com
+SSLType IMAPS
+AuthMechs XOAUTH2
+PassCmd "oauth2get gmail gmail"
+
+IMAPStore gmail-remote
+Account gmail 
+
+MaildirStore gmail-local
+Path ~/.mail/gmail/
+Inbox ~/.mail/gmail/Inbox
+
+Channel gmail-inbox
+Master :gmail-remote:
+Slave :gmail-local:
+Patterns "INBOX"
+
+Channel gmail-sent
+Master :gmail-remote:"[Gmail]/Sent Mail"
+Slave :gmail-local:sent
+
+Channel gmail-trash
+Master :gmail-remote:"[Gmail]/Trash"
+Slave :gmail-local:trash
+
+Group gmail 
+Channel gmail-inbox
+Channel gmail-sent
+Channel gmail-trash
+
+
+# IMAPAccount personal
+# ...
+
+IMAPAccount arizona 
+Host imap.gmail.com
+User gcgbarbosa@email.arizona.edu 
+SSLType IMAPS
+AuthMechs XOAUTH2
+PassCmd "oauth2get gmail arizona"
+
+
+IMAPStore arizona-remote
+Account arizona 
+
+MaildirStore arizona-local
+Path ~/.mail/arizona/
+Inbox ~/.mail/arizona/Inbox
+
+Channel arizona-inbox
+Master :arizona-remote:
+Slave :arizona-local:
+Patterns "INBOX"
+
+Channel arizona-sent
+Master :arizona-remote:"[Gmail]/Sent Mail"
+Slave :arizona-local:sent
+
+Channel arizona-trash
+Master :arizona-remote:"[Gmail]/Trash"
+Slave :arizona-local:trash
+
+Group arizona 
+Channel arizona-inbox
+Channel arizona-sent
+Channel arizona-trash
+
