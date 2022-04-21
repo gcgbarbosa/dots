@@ -46,7 +46,7 @@ font-1=Iosevka Nerd Font:size=16;3
 
 dpi = 100
 
-modules-left =  i3
+modules-left =  i3 battery
 ; Mpd
 modules-center = time 
 modules-right = pulseaudio cpu memory eth
@@ -340,12 +340,12 @@ label-empty-padding = 1
 type = internal/battery
 
 ; This is useful in case the battery never reports 100% charge
-full-at = 99
+full-at = 100
 
 ; Use the following command to list batteries and adapters:
 ; $ ls -1 /sys/class/power_supply/
-battery = BAT0
-adapter = ADP1
+battery = BAT1
+adapter = AC 
 
 ; If an inotify event haven't been reported in this many
 ; seconds, manually poll for new values.
@@ -370,14 +370,14 @@ time-format = %H:%M
 ;   <bar-capacity>
 ;   <ramp-capacity>
 ;   <animation-charging>
-format-charging = <animation-charging>
+;format-charging = <animation-charging>
 
 ; Available tags:
 ;   <label-discharging> (default)
 ;   <bar-capacity>
 ;   <ramp-capacity>
 ;   <animation-discharging>
-format-discharging = <ramp-capacity>
+;format-discharging = <ramp-capacity>
 
 ; Available tags:
 ;   <label-full> (default)
@@ -390,14 +390,14 @@ format-discharging = <ramp-capacity>
 ;   %percentage_raw%
 ;   %time%
 ;   %consumption% (shows current charge rate in watts)
-label-charging = Charging %percentage%%
+label-charging = "  On %percentage%%"
 
 ; Available tokens:
 ;   %percentage% (default) - is set to 100 if full-at is reached
 ;   %percentage_raw%
 ;   %time%
 ;   %consumption% (shows current discharge rate in watts)
-label-discharging = Discharging %percentage%%
+label-discharging = "  Off %percentage%%"
 
 ; Available tokens:
 ;   %percentage% (default) - is set to 100 if full-at is reached
@@ -412,7 +412,7 @@ ramp-capacity-3 = 
 ramp-capacity-4 = 
 
 ; Only applies if <bar-capacity> is used
-bar-capacity-width = 10
+bar-capacity-width = 100
 
 ; Only applies if <animation-charging> is used
 animation-charging-0 = 
