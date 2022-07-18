@@ -1,6 +1,4 @@
-! Swap caps lock and escape
-remove Lock = Caps_Lock
-!keysym Escape = grave asciitilde
-keysym Caps_Lock = Escape
-add Lock = Caps_Lock
-!keycode 133 = F12
+!!# Swap caps lock and escape
+!remove Lock = Caps_Lock
+!keysym Caps_Lock = Escape
+!add Lock = Caps_Lock

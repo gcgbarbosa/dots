@@ -24,11 +24,10 @@ xset r rate 200 50
 # xrandr --output HDMI-1 --mode 1920x1080 --rate 239.76
 # xrandr --output HDMI-1 --mode 3840x2160 --scale 0.5x0.5
 
-xrandr --output eDP-1 --scale 0.5x0.5
+xrandr --output eDP-1 --scale 0.6x0.6
 
 # make wal colors persist on reboot
 wal -R
 
 # run i3
 exec i3
-
