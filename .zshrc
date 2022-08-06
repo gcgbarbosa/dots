@@ -1,3 +1,6 @@
+# Add local bins to path
+export PATH="/home/gcgbarbosa/.local/bin:$PATH"
+
 ##
 # FZF does not use ripgrep by default
 # We need to tel FZF to use ripgrep with FZF_DEFAULT

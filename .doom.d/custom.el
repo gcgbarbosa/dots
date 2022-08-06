@@ -22,6 +22,15 @@
  '(pdf-view-midnight-colors (cons "#bbc2cf" "#282c34"))
  '(rustic-ansi-faces
    ["#282c34" "#ff6c6b" "#98be65" "#ECBE7B" "#51afef" "#c678dd" "#46D9FF" "#bbc2cf"])
+ '(safe-local-variable-values
+   '((add-to-list 'company-c-headers-path-system "/home/gcgbarbosa/repos/phd/ns3/ns-allinone-3.36.1/ns-3.36.1/build")
+     (eval if
+           (boundp 'c-offsets-alist)
+           (add-to-list 'c-offsets-alist
+                        '(innamespace . -)))
+     (eval add-to-list 'auto-mode-alist
+           '("\\.h\\'" . c++-mode))
+     (whitespace-style face tabs tab-mark trailing lines-tail empty)))
  '(vc-annotate-background "#282c34")
  '(vc-annotate-color-map
    (list
