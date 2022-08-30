@@ -20,11 +20,9 @@ export EDITOR=nvim
 # chang the speed of the keyboard
 xset r rate 200 50
 
-# change resolution to 240hz
-# xrandr --output HDMI-1 --mode 1920x1080 --rate 239.76
-# xrandr --output HDMI-1 --mode 3840x2160 --scale 0.5x0.5
-
-xrandr --output eDP-1 --scale 0.6x0.6
+# change refresh rate to 240hz
+#xrandr --output DP-2 --mode 1920x1080 --rate 239.76
+#xrandr --output DP-4 --mode 1920x1080 --rate 239.76
 
 # make wal colors persist on reboot
 wal -R

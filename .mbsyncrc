@@ -2,12 +2,53 @@ Create Both
 Expunge Both
 SyncState *
 
+
+# IMAPAccount personal
+# ...
+
+IMAPAccount arizona
+Host imap.gmail.com
+User gcgbarbosa@arizona.edu
+SSLType IMAPS
+# pass font!column!expert
+# PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.password-store/arizona-email.gpg"
+PassCmd "pass arizona-email"
+
+IMAPStore arizona-remote
+Account arizona
+
+MaildirStore arizona-local
+Path ~/.mail/arizona/
+Inbox ~/.mail/arizona/Inbox
+
+Channel arizona-inbox
+Master :arizona-remote:
+Slave :arizona-local:
+Patterns "INBOX"
+
+Channel arizona-sent
+Master :arizona-remote:"[Gmail]/Sent Mail"
+Slave :arizona-local:sent
+
+Channel arizona-trash
+Master :arizona-remote:"[Gmail]/Trash"
+Slave :arizona-local:trash
+
+Group arizona
+Channel arizona-inbox
+Channel arizona-sent
+Channel arizona-trash
+
+
+
+
 IMAPAccount gmail 
 Host imap.gmail.com
 User gcgbarbosa@gmail.com
 SSLType IMAPS
-AuthMechs XOAUTH2
-PassCmd "oauth2get gmail gmail"
+# Pass nrqpfjubyfwjuwxh
+# PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.password-store/gmail-email.gpg"
+PassCmd "pass gmail-email"
 
 IMAPStore gmail-remote
 Account gmail 
@@ -34,40 +75,4 @@ Channel gmail-inbox
 Channel gmail-sent
 Channel gmail-trash
 
-
-# IMAPAccount personal
-# ...
-
-IMAPAccount arizona 
-Host imap.gmail.com
-User gcgbarbosa@email.arizona.edu 
-SSLType IMAPS
-AuthMechs XOAUTH2
-PassCmd "oauth2get gmail arizona"
-
-
-IMAPStore arizona-remote
-Account arizona 
-
-MaildirStore arizona-local
-Path ~/.mail/arizona/
-Inbox ~/.mail/arizona/Inbox
-
-Channel arizona-inbox
-Master :arizona-remote:
-Slave :arizona-local:
-Patterns "INBOX"
-
-Channel arizona-sent
-Master :arizona-remote:"[Gmail]/Sent Mail"
-Slave :arizona-local:sent
-
-Channel arizona-trash
-Master :arizona-remote:"[Gmail]/Trash"
-Slave :arizona-local:trash
-
-Group arizona 
-Channel arizona-inbox
-Channel arizona-sent
-Channel arizona-trash
 

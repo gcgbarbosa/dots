@@ -1,3 +1,6 @@
+# Make terminal compatible
+export TERM=xterm-256color
+
 # Add local bins to path
 export PATH="/home/gcgbarbosa/.local/bin:$PATH"
 
@@ -51,6 +54,9 @@ export CUBLAS_WORKSPACE_CONFIG=:16:8
 eval "$(starship init zsh)"
 # turn off all beeps
 unsetopt BEEP
+
+# set the editor for cron
+export EDITOR=vim
 
 # aliases
 ## exa aliases

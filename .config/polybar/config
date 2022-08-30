@@ -48,7 +48,7 @@ dpi = 100
 modules-left =  i3 
 ; Mpd
 modules-center = time
-modules-right = pulseaudio cpu memory eth
+modules-right = cpu memory
 
 ; scroll-up =  i3wm-wsnext
 ; scroll-down = i3wm-wsprev
