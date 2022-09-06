@@ -4,7 +4,7 @@ configuration {
   icon-theme: "papirus";
   lines: 12;
   columns: 1;
-  font: "Lexend Deca 12";
+  font: "Iosevka 12";
   bw: 0;
   padding: 100;
   eh: 1;

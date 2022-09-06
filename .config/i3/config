@@ -187,3 +187,5 @@ client.background       $bg
 # start redshift
 exec --no-startup-id redshift-gtk -l 32.22174:-110.92648
 
+# dunsk
+exec --no-startup-id dunst
