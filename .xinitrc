@@ -23,8 +23,13 @@ xset r rate 200 50
 # change refresh rate to 240hz
 #xrandr --output DP-2 --mode 1920x1080 --rate 239.76
 
+# picom
+picom -b
+hsetroot -solid '#000000'
+
 # make wal colors persist on reboot
 wal -R
+
 
 # run i3
 exec i3

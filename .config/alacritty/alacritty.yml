@@ -5,6 +5,9 @@ key_bindings:
 selection:
   save_to_clipboard: true
 
+window:
+   opacity: 0.8
+
 font:
   normal:
     family: Iosevka Term
