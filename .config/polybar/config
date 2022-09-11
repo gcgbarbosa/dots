@@ -34,7 +34,7 @@ alert = ${xrdb:color5:#222}
 
 [bar/bar]
 enable-ipc=true
-height = 40
+height = 50
 
 background = ${colors.background}
 ;background = ${colors.primary}
@@ -66,6 +66,10 @@ tray-background = ${colors.background-alt}
 ; | '_ ` _ \ / _ \ / _` | | | | |/ _ \/ __|
 ; | | | | | | (_) | (_| | |_| | |  __/\__ \
 ; |_| |_| |_|\___/ \__,_|\__,_|_|\___||___/
+
+;[module/wired-network]
+;type = internal/network
+;ihnterface = eth1
 
 
 [module/i3]
@@ -111,14 +115,14 @@ label-urgent-padding = 2
 type = internal/cpu
 interval = 2
 format-prefix = " "
-format-padding = 2
+format-padding = 1
 format-foreground = ${colors.foreground}
 label = %percentage%%
 
 [module/memory]
 type = internal/memory
 interval = 2
-format-padding = 2
+format-padding = 1
 format-prefix = " "
 format-foreground = ${colors.foreground}
 label = %percentage_used%%
@@ -127,13 +131,13 @@ label = %percentage_used%%
 [module/time]
 type = internal/date
 interval = 10
-format-padding = 3
+format-padding = 1
 
 time = "%H:%M"
 date = "%A %d %b"
 
 label = %date%, %time%
-label-padding = 2
+label-padding = 1
 
 
 [module/battery]
@@ -264,7 +268,7 @@ animation-low-framerate = 200
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume-padding = 3
+format-volume-padding = 1
 format-volume = <ramp-volume><label-volume>
 label-volume = %percentage:4:4%%
 use-ui-max = false
@@ -274,12 +278,10 @@ ramp-volume-0 = ""
 ramp-volume-1 = ""
 ramp-volume-2 = ""
 
-
 format-muted-padding = 2
 label-muted = " muted"   
 label-muted-background = ${colors.background}
 label-muted-foreground = ${colors.background-alt}
-
 
 [settings]
 screenchange-reload = true
