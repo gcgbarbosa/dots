@@ -192,3 +192,12 @@ exec --no-startup-id dunst
 
 # reload colors from pywal
 exec --no-startup-id wal -R
+
+# network mannager applet
+exec --no-startup-id nm-applet
+
+# bluetooth stuff
+exec --no-startup-id blueman-applet
+
+# clipboard management
+exec --no-startup-id clipit

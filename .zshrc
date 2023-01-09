@@ -59,7 +59,7 @@ unsetopt BEEP
 export EDITOR=vim
 
 # set GCC version to 7
-export CC=gcc-7 CXX=g++-7
+# export CC=gcc-7 CXX=g++-7
 
 # aliases
 ## exa aliases
