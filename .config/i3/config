@@ -164,7 +164,8 @@ bindsym $mod+Ctrl+r mode "resize"
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 # disable window tilebars
-for_window [class=".*"] border pixel 1
+for_window [class=".*"] border pixel 4
+
 # setting gaps
 gaps outer 4
 gaps inner 8
@@ -174,21 +175,30 @@ gaps inner 8
 # from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources.
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
-# class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
-client.background       $bg
+set_from_resource $fg1 i3wm.color1 #f0f0f0
+set_from_resource $fg2 i3wm.color2 #f0f0f0
+set_from_resource $fg3 i3wm.color3 #f0f0f0
 
-# start redshift
+set_from_resource $bg1 i3wm.color5 #f0f0f0
+set_from_resource $bg2 i3wm.color6 #f0f0f0
+set_from_resource $bg3 i3wm.color7 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg1     $bg1     $fg1  $bg1       $bg1
+client.focused_inactive $bg1     $bg1     $fg1  $bg1       $bg1
+client.unfocused        $bg3     $bg3     $fg3  $bg3       $bg3
+client.urgent           $bg2     $bg2     $fg2  $bg2       $bg2
+client.placeholder      $bg1     $bg1     $fg1  $bg1       $bg1
+client.background       $bg1
+
+# start redshift # tucson
 exec --no-startup-id redshift-gtk -l 32.22174:-110.92648
 
 # dunsk
 exec --no-startup-id dunst
+
+# picom
+exec --no-startup-id picom
 
 # reload colors from pywal
 exec --no-startup-id wal -R
