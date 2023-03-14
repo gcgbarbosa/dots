@@ -2,9 +2,9 @@ Create Both
 Expunge Both
 SyncState *
 
-
-# IMAPAccount personal
-# ...
+############
+# ARIZONA ##
+############
 
 IMAPAccount arizona
 Host imap.gmail.com
@@ -39,16 +39,17 @@ Channel arizona-inbox
 Channel arizona-sent
 Channel arizona-trash
 
-
-
+############
+### GMAIL ##
+############
 
 IMAPAccount gmail 
 Host imap.gmail.com
 User gcgbarbosa@gmail.com
 SSLType IMAPS
-# Pass nrqpfjubyfwjuwxh
 # PassCmd "gpg --quiet --for-your-eyes-only --no-tty --decrypt ~/.password-store/gmail-email.gpg"
 PassCmd "pass gmail-email"
+
 
 IMAPStore gmail-remote
 Account gmail 
