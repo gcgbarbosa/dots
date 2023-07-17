@@ -109,3 +109,4 @@ fi
 #zplug load --verbose
 zplug load
 
+source /usr/share/nvm/init-nvm.sh
