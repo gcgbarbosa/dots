@@ -1,6 +1,11 @@
 # Make terminal compatible
 export TERM=xterm-256color
 
+# Add pyenv
+# export PYENV_ROOT="$HOME/.pyenv"
+# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+# eval "$(pyenv init -)"
+
 # Add local bins to path
 export PATH="/home/gcgbarbosa/.local/bin:$PATH"
 

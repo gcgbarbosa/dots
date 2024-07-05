@@ -170,8 +170,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 for_window [class=".*"] border pixel 4
 
 # setting gaps
-gaps outer 4
-gaps inner 8
+# gaps outer 4
+# gaps inner 8
 
 # Set colors from Xresources
 # Change 'color7' and 'color2' to whatever colors you want i3 to use 
@@ -195,13 +195,15 @@ client.placeholder      $bg1     $bg1     $fg1  $bg1       $bg1
 client.background       $bg1
 
 # start redshift # tucson
-exec --no-startup-id redshift-gtk -l 32.22174:-110.92648
+# exec --no-startup-id redshift-gtk -l 32.22174:-110.92648
 
-# dunsk
-exec --no-startup-id dunst
+# dunsk 
+# it is not required on ubuntu
+# exec --no-startup-id dunst
 
 # picom
-exec --no-startup-id picom
+# not required on ubuntu
+# exec --no-startup-id picom
 
 # reload colors from pywal
 exec --no-startup-id wal -R
@@ -209,8 +211,10 @@ exec --no-startup-id wal -R
 # network mannager applet
 exec --no-startup-id nm-applet
 
+
+
 # bluetooth stuff
-exec --no-startup-id blueman-applet
+# exec --no-startup-id blueman-applet
 
 # clipboard management
-exec --no-startup-id clipit
+# exec --no-startup-id clipit

@@ -25,6 +25,7 @@ foreground-alt = ${xrdb:color8:#222}
 primary = ${xrdb:color3:#222}
 secondary = ${xrdb:color4:#222}
 alert = ${xrdb:color5:#222}
+disabled = ${xrdb:color2:#222}
 
 ;  _                    
 ; | |__   __ _ _ __ ___ 
@@ -32,113 +33,116 @@ alert = ${xrdb:color5:#222}
 ; | |_) | (_| | |  \__ \
 ; |_.__/ \__,_|_|  |___/
 
+
 [bar/bar]
-enable-ipc=true
-height = 40
+width = 100%
+height = 40pt
+radius = 0
+
+monitor = HDMI-1
+
+; monitor = HDMI-1
+; dpi = 96
 
 background = ${colors.background}
-;background = ${colors.primary}
 foreground = ${colors.foreground}
 
-padding=0
+line-size = 3pt
+
+border-size = 0pt
+border-color = #00000000
+
+padding-left = 0
+padding-right = 1
+
+module-margin = 1
+
+separator = |
+separator-foreground = ${colors.disabled}
+
+tray-position = center
+tray-padding = 0
+tray-background = ${colors.background}
+
 font-0=Iosevka Nerd Font:size=16:antialias=true;3
 
-dpi = 100
+modules-left = xworkspaces xwindow
+modules-right = filesystem battery pulseaudio xkeyboard memory cpu wlan eth date
 
-modules-left =  i3 
-; Mpd
-modules-center = time
-modules-right =  battery pipewire pulseaudio cpu memory
+cursor-click = pointer
+cursor-scroll = ns-resize
 
-; scroll-up =  i3wm-wsnext
-; scroll-down = i3wm-wsprev
+enable-ipc = true
 
-wm-restack = i3
-override-redirect = false
+; wm-restack = generic
+; wm-restack = bspwm
+; wm-restack = i3
 
-tray-position = right
-tray-padding = 0
-tray-background = ${colors.background-alt}
-;tray-offset-x =  
+; override-redirect = true
 
+[module/systray]
+type = internal/tray
 
-;  _ __ ___   ___   __| |_   _| | ___  ___ 
-; | '_ ` _ \ / _ \ / _` | | | | |/ _ \/ __|
-; | | | | | | (_) | (_| | |_| | |  __/\__ \
-; |_| |_| |_|\___/ \__,_|\__,_|_|\___||___/
+format-margin = 8pt
+tray-spacing = 16pt
 
-;[module/wired-network]
-;type = internal/network
-;ihnterface = eth1
+[module/xworkspaces]
+type = internal/xworkspaces
 
+label-active = %name%
+label-active-background = ${colors.background-alt}
+label-active-underline= ${colors.primary}
+label-active-padding = 1
 
-[module/i3]
-type = internal/i3
-format = <label-state> <label-mode>
-index-sort = true
-wrapping-scroll = false
+label-occupied = %name%
+label-occupied-padding = 1
 
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
-
-label-mode-padding = 1
-label-mode-foreground = ${colors.foreground}
-label-mode-background = ${colors.background}
-
-; focused = Active workspace on focused monitor
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 4
-
-; unfocused = Inactive workspace on any monitor
-label-unfocused = %index%
-label-unfocused-background = ${colors.foreground-alt}
-label-unfocused-underline= ${colors.secondary}
-label-unfocused-padding = 2
-
-; visible = Active workspace on unfocused monitor
-label-visible = %index%
-label-visible-background = ${self.label-focused-background}
-label-visible-underline = ${self.label-focused-underline}
-label-visible-padding = ${self.label-focused-padding}
-
-; urgent = Workspace with urgency hint set
-label-urgent = %index%
+label-urgent = %name%
 label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
+label-urgent-padding = 1
 
-; Separator in between workspaces
-; label-separator = |
+label-empty = %name%
+label-empty-foreground = ${colors.disabled}
+label-empty-padding = 1
 
-[module/cpu]
-type = internal/cpu
-interval = 2
-format-prefix = " "
-format-padding = 1
-format-foreground = ${colors.foreground}
-label = %percentage%%
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:60:...%
 
-[module/memory]
-type = internal/memory
-interval = 2
-format-padding = 1
-format-prefix = " "
-format-foreground = ${colors.foreground}
-label = %percentage_used%%
+[module/filesystem]
+type = internal/fs
+interval = 25
 
+mount-0 = /
 
-[module/time]
-type = internal/date
-interval = 10
-format-padding = 1
+label-mounted = %{F#F0C674}%mountpoint%%{F-} %percentage_used%%
 
-time = "%H:%M"
-date = "%A %d %b"
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.disabled}
 
-label = %date%, %time%
-label-padding = 1
+[module/pulseaudio]
+type = internal/pulseaudio
 
+format-volume-prefix = "VOL "
+format-volume-prefix-foreground = ${colors.primary}
+format-volume = <label-volume>
+
+label-volume = %percentage%%
+
+label-muted = muted
+label-muted-foreground = ${colors.disabled}
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+label-layout = %layout%
+label-layout-foreground = ${colors.primary}
+
+label-indicator-padding = 2
+label-indicator-margin = 1
+label-indicator-foreground = ${colors.background}
+label-indicator-background = ${colors.secondary}
 
 [module/battery]
 type = internal/battery
@@ -155,7 +159,7 @@ low-at = 5
 ; Use the following command to list batteries and adapters:
 ; $ ls -1 /sys/class/power_supply/
 battery = BAT0
-adapter = AC0
+adapter = ADP1
 
 ; If an inotify event haven't been reported in this many
 ; seconds, manually poll for new values.
@@ -168,131 +172,49 @@ adapter = AC0
 ; Default: 5
 poll-interval = 5
 
-; see "man date" for details on how to format the time string
-; NOTE: if you want to use syntax tags here you need to use %%{...}
-; Default: %H:%M:%S
-time-format = %H:%M
+[module/memory]
+type = internal/memory
+interval = 2
+format-prefix = "RAM "
+format-prefix-foreground = ${colors.primary}
+label = %percentage_used:2%%
 
-; Available tags:
-;   <label-charging> (default)
-;   <bar-capacity>
-;   <ramp-capacity>
-;   <animation-charging>
-format-charging = <animation-charging> <label-charging>
+[module/cpu]
+type = internal/cpu
+interval = 2
+format-prefix = "CPU "
+format-prefix-foreground = ${colors.primary}
+label = %percentage:2%%
 
-; Available tags:
-;   <label-discharging> (default)
-;   <bar-capacity>
-;   <ramp-capacity>
-;   <animation-discharging>
-format-discharging = <ramp-capacity> <label-discharging>
-
-; Available tags:
-;   <label-full> (default)
-;   <bar-capacity>
-;   <ramp-capacity>
-;format-full = <ramp-capacity> <label-full>
-
-; Format used when battery level drops to low-at
-; If not defined, format-discharging is used instead.
-; Available tags:
-;   <label-low>
-;   <animation-low>
-;   <bar-capacity>
-;   <ramp-capacity>
-; New in version 3.6.0
-;format-low = <label-low> <animation-low>
-
-; Available tokens:
-;   %percentage% (default) - is set to 100 if full-at is reached
-;   %percentage_raw%
-;   %time%
-;   %consumption% (shows current charge rate in watts)
-label-charging = %percentage%%
-
-; Available tokens:
-;   %percentage% (default) - is set to 100 if full-at is reached
-;   %percentage_raw%
-;   %time%
-;   %consumption% (shows current discharge rate in watts)
-label-discharging = %percentage%%
-
-; Available tokens:
-;   %percentage% (default) - is set to 100 if full-at is reached
-;   %percentage_raw%
-label-full = Fully charged
-
-; Available tokens:
-;   %percentage% (default) - is set to 100 if full-at is reached
-;   %percentage_raw%
-;   %time%
-;   %consumption% (shows current discharge rate in watts)
-; New in version 3.6.0
-label-low = BATTERY LOW
-
-; Only applies if <ramp-capacity> is used
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
-ramp-capacity-3 = 
-ramp-capacity-4 = 
-
-; Only applies if <bar-capacity> is used
-bar-capacity-width = 10
-
-; Only applies if <animation-charging> is used
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
-animation-charging-3 = 
-animation-charging-4 = 
-; Framerate in milliseconds
-animation-charging-framerate = 750
-
-; Only applies if <animation-discharging> is used
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
-animation-discharging-3 = 
-animation-discharging-4 = 
-; Framerate in milliseconds
-animation-discharging-framerate = 500
-
-; Only applies if <animation-low> is used
-; New in version 3.6.0
-animation-low-0 = !
-animation-low-1 =
-animation-low-framerate = 200
-
-
-[module/pulseaudio]
-type = internal/pulseaudio
-
-format-volume-padding = 1
-format-volume = <ramp-volume><label-volume>
-label-volume = %percentage:4:4%%
-use-ui-max = false
+[network-base]
+type = internal/network
 interval = 5
+format-connected = <label-connected>
+format-disconnected = <label-disconnected>
+label-disconnected = %{F#F0C674}%ifname%%{F#707880} disconnected
 
-ramp-volume-0 = ""
-ramp-volume-1 = ""
-ramp-volume-2 = ""
+[module/wlan]
+inherit = network-base
+interface-type = wireless
+label-connected = %{F#F0C674}%ifname%%{F-} %essid% %local_ip%
 
-format-muted-padding = 2
-label-muted = " muted"   
-label-muted-background = ${colors.background}
-label-muted-foreground = ${colors.background-alt}
+[module/eth]
+inherit = network-base
+interface-type = wired
+label-connected = %{F#F0C674}%ifname%%{F-} %local_ip%
+
+[module/date]
+type = internal/date
+interval = 1
+
+date = %H:%M
+date-alt = %Y-%m-%d %H:%M:%S
+
+label = %date%
+label-foreground = ${colors.primary}
 
 [settings]
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
-;pseudo-transparency = true
-
-[global/wm]
-margin-top = 0
-margin-bottom = 0
+pseudo-transparency = true
 
 ; vim:ft=dosini
