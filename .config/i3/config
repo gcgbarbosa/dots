@@ -210,9 +210,6 @@ exec --no-startup-id wal -R
 # network mannager applet
 exec --no-startup-id nm-applet
 
-# exec keyring
-exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
-
 # bluetooth stuff
 exec --no-startup-id blueman-applet
 

@@ -1,7 +1,7 @@
 " CHANGING THE PACKAGE MANAGER
 call plug#begin('~/.vim/plugged')
   " enable autocomplete
-  Plug 'neoclide/coc.nvim', {'branch': 'release'}
+  " Plug 'neoclide/coc.nvim', {'branch': 'release'}
   " another try to get indent lines
   Plug 'Yggdroot/indentLine'
   " integration with github.

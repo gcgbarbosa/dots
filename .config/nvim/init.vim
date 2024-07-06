@@ -57,7 +57,7 @@ let g:indentLine_fileTypeExclude = ['vimwiki', 'tex']
 let g:indentLine_bufTypeExclude = ['help', 'terminal', 'vimwiki', 'tex']
 
 " import coc config
-source ~/.config/nvim/coc.vim
+" source ~/.config/nvim/coc.vim
 
 " import coc config
 source ~/.config/nvim/fzf.vim
@@ -76,3 +76,5 @@ let g:lightline = {
   \ }
 colorscheme wal
 
+" ignore message about older nvim version
+let g:coc_disable_startup_warning = 1
