@@ -201,8 +201,7 @@ client.background       $bg1
 # it is not required on ubuntu
 # exec --no-startup-id dunst
 
-# picom
-# not required on ubuntu
+# only required for arch
 # exec --no-startup-id picom
 
 # reload colors from pywal
@@ -211,10 +210,9 @@ exec --no-startup-id wal -R
 # network mannager applet
 exec --no-startup-id nm-applet
 
-
+# exec keyring
+exec --no-startup-id /usr/bin/gnome-keyring-daemon --start --components=ssh,secrets,pkcs11
 
 # bluetooth stuff
-# exec --no-startup-id blueman-applet
+exec --no-startup-id blueman-applet
 
-# clipboard management
-# exec --no-startup-id clipit
