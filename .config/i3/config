@@ -33,7 +33,7 @@ floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id alacritty
 
 # take a screenshot
-bindsym $mod+p exec maim --select ~/imgs/ss/`date +%F-%T`.png
+bindsym $mod+p exec maim --select ~/imgs/ss/`date +%Y%m%d%H%M%S%N`.png
 # record gif
 bindsym $mod+Shift+p peek
 
@@ -195,7 +195,7 @@ client.placeholder      $bg1     $bg1     $fg1  $bg1       $bg1
 client.background       $bg1
 
 # start redshift # tucson
-# exec --no-startup-id redshift-gtk -l 32.22174:-110.92648
+exec --no-startup-id redshift-gtk -l -12.974722:-38.476665
 
 # dunsk 
 # it is not required on ubuntu
@@ -212,4 +212,7 @@ exec --no-startup-id nm-applet
 
 # bluetooth stuff
 exec --no-startup-id blueman-applet
+
+# vnt
+exec --no-startup-id /home/gcgbarbosa/scripts/vnt_notebook.sh
 
