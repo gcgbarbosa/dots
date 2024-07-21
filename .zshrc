@@ -2,9 +2,9 @@
 export TERM=xterm-256color
 
 # Add pyenv
-# export PYENV_ROOT="$HOME/.pyenv"
-# [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-# eval "$(pyenv init -)"
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 # Add local bins to path
 export PATH="/home/gcgbarbosa/.local/bin:$PATH"
@@ -72,12 +72,14 @@ alias l='exa'
 alias la='exa -a'
 alias ll='exa -lah'
 alias ls='exa --color=auto'
-##
-
 alias ls='exa --color=auto'
-alias wce='sudo modprobe dslr-webcam'
+
+# webcam aliasese
+alias wcd='sudo rmmod v4l2loopback'
+alias wce='sudo modprobe v4l2loopback exclusive_caps=1 max_buffers=2'
 alias wclc='gphoto2 --list-config'
-alias wcr='gphoto2 --stdout --capture-movie | ffmpeg -hwaccel nvdec -c:v mjpeg_cuvid -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video0'
+alias wcr='gphoto2 --stdout --capture-movie | ffmpeg -hwaccel nvdec -c:v mjpeg_cuvid -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video4'
+alias wcr-cpu='gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video4'
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
