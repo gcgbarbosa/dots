@@ -1,3 +1,4 @@
+
 # Make terminal compatible
 export TERM=xterm-256color
 
@@ -17,6 +18,8 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
+
+
 
 ##
 # Lines configured by zsh-newuser-install
@@ -116,4 +119,9 @@ fi
 #zplug load --verbose
 zplug load
 
+# chatgpt completions
+. <(chatgpt --set-completions zsh)
 
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
