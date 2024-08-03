@@ -1,7 +1,7 @@
-local plugins = {
+return {
 	{
 		"rcarriga/nvim-dap-ui",
-    dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" } ,
+		dependencies = { "mfussenegger/nvim-dap", "nvim-neotest/nvim-nio" },
 		config = function()
 			local dap = require("dap")
 			local dapui = require("dapui")
@@ -20,8 +20,8 @@ local plugins = {
 	{
 		"mfussenegger/nvim-dap",
 		config = function()
-			local dap = require('dap')
-      vim.keymap.set('n', '<Leader>dt', dap.toggle_breakpoint, {desc='Toggle breakpoint'})
+			local dap = require("dap")
+			vim.keymap.set("n", "<Leader>dt", dap.toggle_breakpoint, { desc = "Toggle breakpoint" })
 		end,
 	},
 	{
@@ -38,4 +38,3 @@ local plugins = {
 	},
 }
 
-return plugins

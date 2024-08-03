@@ -1,6 +1,6 @@
 local plugins = {
 	{
-    lazy = false,
+		lazy = false,
 		"github/copilot.vim",
 	},
 }

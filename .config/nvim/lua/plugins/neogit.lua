@@ -1,18 +1,15 @@
+return {
+	{
+		lazy = false,
+		"NeogitOrg/neogit",
+		dependencies = {
+			"nvim-lua/plenary.nvim", -- required
+			"sindrets/diffview.nvim", -- optional - Diff integration
 
-local plugins = {
-  {
-    lazy = false,
-    "NeogitOrg/neogit",
-    dependencies = {
-      "nvim-lua/plenary.nvim",         -- required
-      "sindrets/diffview.nvim",        -- optional - Diff integration
-
-      -- Only one of these is needed, not both.
-      "nvim-telescope/telescope.nvim", -- optional
-      -- "ibhagwan/fzf-lua",              -- optional
-    },
-    config = true
-  }
+			-- Only one of these is needed, not both.
+			"nvim-telescope/telescope.nvim", -- optional
+			-- "ibhagwan/fzf-lua",              -- optional
+		},
+		config = true,
+	},
 }
-
-return plugins
