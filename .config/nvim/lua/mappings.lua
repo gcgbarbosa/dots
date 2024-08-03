@@ -8,3 +8,7 @@ map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
 -- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+--
+map("n", "<leader>gg", "<cmd> Neogit <cr>")
+map("n", "<leader>tk", "<cmd> Telescope keymaps <cr>")
+
