@@ -1,4 +1,6 @@
 .ssh/id_rsa
 .ssh/id_rsa.pub
 .ssh/known_hosts
-.ssh/known_hosts.old
+.assh/known_hosts.old
+.config/nvim/pack/
+
