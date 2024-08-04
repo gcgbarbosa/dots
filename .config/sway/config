@@ -126,12 +126,9 @@ bindsym $mod+Shift+7 move container to workspace $ws7
 bindsym $mod+Shift+8 move container to workspace $ws8
 bindsym $mod+Shift+9 move container to workspace $ws9
 bindsym $mod+Shift+0 move container to workspace $ws10
+
 # reload the configuration file
 bindsym $mod+Shift+r exec --no-startup-id swaymsg reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-# bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Ctrl+e exec --no-startup-id "i3-navbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -159,13 +156,9 @@ bar {
   swaybar_command waybar
 }
 
-# disable window tilebars
-# for_window [class=".*"] border pixel 4
-default_border none
-default_floating_border none
-font pango:monospace 0
-titlebar_padding 1
-titlebar_border_thickness 0
+# only show a pixel bar
+default_border pixel 2
+default_floating_border pixel 2
 
 # setting gaps
 gaps outer 4

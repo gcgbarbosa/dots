@@ -1,4 +1,3 @@
-
 # Make terminal compatible
 export TERM=xterm-256color
 

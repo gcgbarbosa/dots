@@ -16,7 +16,7 @@
      "sway/workspaces": {
          "disable-scroll": true,
          "all-outputs": true,
-         "format": "{name}: {icon}",
+         "format": "{name}:{icon} ",
          "format-icons": {
              "7": "",
              "8": "",
@@ -110,7 +110,7 @@
         "format": "{capacity}% ",
         "format-charging": "{capacity}% ",
         "format-plugged": "{capacity}% ",
-        "format-alt": "{time} ",
+        //"format-alt": "{time} ",
         // "format-good": "", // An empty format will hide the module
         // "format-full": "",
          //"format-icons": ["", "", "", "", ""]
