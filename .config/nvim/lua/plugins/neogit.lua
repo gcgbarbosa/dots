@@ -1,4 +1,4 @@
-return {
+local plugins = {
 	{
 		lazy = false,
 		"NeogitOrg/neogit",
@@ -13,3 +13,5 @@ return {
 		config = true,
 	},
 }
+
+return plugins

@@ -1,6 +1,5 @@
-
 -- treesiter for better syntax highlighting
-return {
+local plugins = {
 	{
 		"nvim-treesitter/nvim-treesitter",
 		opts = {
@@ -15,3 +14,5 @@ return {
 		},
 	},
 }
+
+return plugins

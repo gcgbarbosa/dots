@@ -12,5 +12,8 @@ map("i", "jk", "<ESC>")
 map("n", "<leader>gg", "<cmd> Neogit <cr>", {desc = "Open Neogit"})
 map("n", "<leader>tk", "<cmd> Telescope keymaps <cr>", {desc = "Telescope keymaps"})
 
+map("n", "<leader><leader>", "<cmd> Telescope command_history <cr>", {desc = "Telescope command history"})
+map("n", ":", "<cmd> Telescope command_history <cr>", {desc = "Telescope command history"})
+
 
 
