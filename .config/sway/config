@@ -36,7 +36,8 @@ floating_modifier $mod
 bindsym $mod+Return exec --no-startup-id kitty
 
 # take a screenshot
-bindsym $mod+p exec maim --select ~/imgs/ss/`date +%Y%m%d%H%M%S%N`.png
+# bindsym $mod+p exec maim --select ~/imgs/ss/`date +%Y%m%d%H%M%S%N`.png
+bindsym $mod+p exec sh -c "slurp | grim -g - ~/imgs/ss/`date +%Y%m%d%H%M%S%N`.png"
 # record gif
 bindsym $mod+Shift+p peek
 

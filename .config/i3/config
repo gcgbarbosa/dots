@@ -30,7 +30,7 @@ font pango:Iosevka Nerd Font 14
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec --no-startup-id alacritty
+bindsym $mod+Return exec --no-startup-id kitty
 
 # take a screenshot
 bindsym $mod+p exec maim --select ~/imgs/ss/`date +%Y%m%d%H%M%S%N`.png
@@ -45,7 +45,8 @@ bindsym $mod+c exec dunstctl close-all
 
 # start dmenu (a program launcher)
 #bindsym $mod+d exec dmenu_run
-bindsym $mod+d exec --no-startup-id rofi -show drun
+# bindsym $mod+d exec --no-startup-id rofi -show drun
+bindsym $mod+d exec --no-startup-id ulauncher
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
