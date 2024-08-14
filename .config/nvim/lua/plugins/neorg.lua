@@ -2,6 +2,13 @@ return {
   "nvim-neorg/neorg",
   lazy = false,
   version = "*",
+  keys = {
+    {
+      "<leader>ni",
+      "<Cmd>Neorg index<CR>",
+      desc = "Neorg: open index file",
+    },
+  },
   config = function()
     require("neorg").setup({
       load = {
