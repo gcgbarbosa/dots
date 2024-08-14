@@ -1,7 +1,4 @@
-local LazyVim = require("lazyvim")
-
-local plugins = {
-  {
+return {
   "echasnovski/mini.animate",
   recommended = true,
   event = "VeryLazy",
@@ -53,6 +50,3 @@ local plugins = {
     }
   end,
 }
-}
-
-return plugins
