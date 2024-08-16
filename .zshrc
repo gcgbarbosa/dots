@@ -28,9 +28,9 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory autocd extendedglob notify
 # End of lines configured by zsh-newuser-install
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/gcgbarbosa/.zshrc'
-
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -59,6 +59,7 @@ export CUBLAS_WORKSPACE_CONFIG=:16:8
 
 # enable starship
 eval "$(starship init zsh)"
+
 # turn off all beeps
 unsetopt BEEP
 
@@ -73,7 +74,6 @@ export EDITOR=vim
 alias l='exa'
 alias la='exa -a'
 alias ll='exa -lah'
-alias ls='exa --color=auto'
 alias ls='exa --color=auto'
 
 # webcam aliasese
@@ -120,6 +120,7 @@ zplug load
 
 # chatgpt completions
 . <(chatgpt --set-completions zsh)
+alias q='chatgpt "$(echo $*)"'
 
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
