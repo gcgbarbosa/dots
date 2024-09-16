@@ -1,3 +1,21 @@
+# direnv stuff
+eval "$(direnv hook zsh)"
+
+# chatgpt completions
+. <(chatgpt --set-completions zsh)
+alias q='chatgpt "$1" | glow'
+
+
+# add NVM to manage NPM
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+
+# add structurizr
+export PATH="/opt/structurizr:$PATH"
+
+
 # Make terminal compatible
 export TERM=xterm-256color
 
@@ -6,8 +24,10 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
+
 # Add local bins to path
 export PATH="/home/gcgbarbosa/.local/bin:$PATH"
+
 
 ##
 # FZF does not use ripgrep by default
@@ -19,7 +39,6 @@ if type rg &> /dev/null; then
 fi
 
 
-
 ##
 # Lines configured by zsh-newuser-install
 #
@@ -29,45 +48,43 @@ SAVEHIST=10000
 setopt appendhistory autocd extendedglob notify
 # End of lines configured by zsh-newuser-install
 
+
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/gcgbarbosa/.zshrc'
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/gcgbarbosa/anaconda3/bin/conda' 'shell.bash' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/gcgbarbosa/anaconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/gcgbarbosa/anaconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/gcgbarbosa/anaconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-## leave conda deactivated by default
-# some system apps do not work if conda are activated by default
-conda deactivate
-# <<< conda initialize <<<
 
 ## make pytorch RNN's replicable
 # explanation here: https://pytorch.org/docs/stable/generated/torch.nn.RNN.html#torch.nn.RNN
 export CUBLAS_WORKSPACE_CONFIG=:16:8
 
+
 # enable starship
 eval "$(starship init zsh)"
+
 
 # turn off all beeps
 unsetopt BEEP
 
+
 # set the editor for cron
 export EDITOR=vim
 
+
 # set GCC version to 7
 # export CC=gcc-7 CXX=g++-7
+
+
+# pnpm
+export PNPM_HOME="/home/gcgbarbosa/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
 
 # aliases
 ## exa aliases
@@ -76,17 +93,20 @@ alias la='exa -a'
 alias ll='exa -lah'
 alias ls='exa --color=auto'
 
+
 # webcam aliasese
 alias wcd='sudo rmmod v4l2loopback'
 alias wce='sudo modprobe v4l2loopback exclusive_caps=1 max_buffers=2'
 alias wclc='gphoto2 --list-config'
 alias wcr='gphoto2 --stdout --capture-movie | ffmpeg -hwaccel nvdec -c:v mjpeg_cuvid -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video4'
 alias wcr-cpu='gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video4'
+alias wc-obs='sudo modprobe v4l2loopback exclusive_caps=1 card_label="OBS Virtual Camera"'
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 (cat ~/.cache/wal/sequences &)
+
 
 # zplug plugin manager
 source ~/.zplug/init.zsh
@@ -118,10 +138,3 @@ fi
 #zplug load --verbose
 zplug load
 
-# chatgpt completions
-. <(chatgpt --set-completions zsh)
-alias q='chatgpt "$(echo $*)"'
-
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
