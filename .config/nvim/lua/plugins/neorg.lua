@@ -8,6 +8,21 @@ return {
       "<Cmd>Neorg index<CR>",
       desc = "Neorg: open index file",
     },
+    {
+      "<leader>njt",
+      "<Cmd>Neorg journal today<CR>",
+      desc = "Neorg: today file",
+    },
+    {
+      "<leader>njm",
+      "<Cmd>Neorg journal tomorrow<CR>",
+      desc = "Neorg: tomorrow file",
+    },
+    {
+      "<leader>njy",
+      "<Cmd>Neorg journal yesterday<CR>",
+      desc = "Neorg: yesterday file",
+    },
   },
   config = function()
     require("neorg").setup({
