@@ -1,3 +1,4 @@
+
 # direnv stuff
 eval "$(direnv hook zsh)"
 
@@ -24,9 +25,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-
-# Add local bins to path
-export PATH="/home/gcgbarbosa/.local/bin:$PATH"
 
 
 ##
@@ -101,6 +99,11 @@ alias wclc='gphoto2 --list-config'
 alias wcr='gphoto2 --stdout --capture-movie | ffmpeg -hwaccel nvdec -c:v mjpeg_cuvid -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video4'
 alias wcr-cpu='gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video4'
 alias wc-obs='sudo modprobe v4l2loopback exclusive_caps=1 card_label="OBS Virtual Camera"'
+
+alias kb-int='setxkbmap -layout us -variant intl'
+alias kb-en='setxkbmap -layout us'
+
+
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
