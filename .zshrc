@@ -1,3 +1,11 @@
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/opt/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/gcloud/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/opt/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/gcloud/google-cloud-sdk/completion.zsh.inc'; fi
+
+# add go
+export PATH=/usr/local/go/bin:$PATH
 
 # direnv stuff
 eval "$(direnv hook zsh)"
@@ -26,6 +34,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 
 
+# Add local bins to path
+export PATH="/home/gcgbarbosa/.local/bin:$PATH"
 
 ##
 # FZF does not use ripgrep by default
@@ -140,4 +150,5 @@ fi
 #
 #zplug load --verbose
 zplug load
+
 

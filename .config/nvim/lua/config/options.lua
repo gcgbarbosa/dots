@@ -8,3 +8,6 @@ vim.g.maplocalleader = "\\"
 vim.g.lazyvim_python_lsp = "pyright"
 -- Set to "ruff_lsp" to use the old LSP implementation version.
 vim.g.lazyvim_python_ruff = "ruff"
+
+-- let g:autoclose_on = 0
+vim.g.autoformat = false
