@@ -1,3 +1,8 @@
+# add nvim 0.10!
+export PATH="$PATH:/opt/nvim-linux64/bin"
+alias vim=nvim
+alias vi=nvim
+
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/opt/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/gcloud/google-cloud-sdk/path.zsh.inc'; fi
 
@@ -6,24 +11,18 @@ if [ -f '/opt/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/gcloud
 
 # add go
 export PATH=/usr/local/go/bin:$PATH
+export PATH=$PATH:$HOME/go/bin
 
 # direnv stuff
 eval "$(direnv hook zsh)"
-
-# chatgpt completions
-. <(chatgpt --set-completions zsh)
-alias q='chatgpt "$1" | glow'
-
 
 # add NVM to manage NPM
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-
 # add structurizr
 export PATH="/opt/structurizr:$PATH"
-
 
 # Make terminal compatible
 export TERM=xterm-256color
@@ -76,10 +75,8 @@ eval "$(starship init zsh)"
 # turn off all beeps
 unsetopt BEEP
 
-
 # set the editor for cron
-export EDITOR=vim
-
+export EDITOR=nvim
 
 # set GCC version to 7
 # export CC=gcc-7 CXX=g++-7

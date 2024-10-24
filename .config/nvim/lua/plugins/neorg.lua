@@ -42,6 +42,8 @@ return {
             default_workspace = "ohack",
           },
         },
+        ["core.integrations.treesitter"] = {},
+        ["core.export"] = {},
       },
     })
     vim.wo.foldlevel = 99
