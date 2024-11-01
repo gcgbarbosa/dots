@@ -68,13 +68,6 @@ bindsym $mod+Mod1+c focus child
 # toggle tiling / floating
 bindsym $mod+Mod1+f floating toggle
 
-# reload the configuration file
-bindsym $mod+Mod1+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Mod1+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Mod1+e exec --no-startup-id "i3-navbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
-
 bindsym $mod+Mod1+r mode "resize"
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -94,7 +87,12 @@ mode "resize" {
         bindsym $mod+r mode "default"
 }
 
-
+# reload the configuration file
+bindsym $mod+Mod1+Shift+c reload
+# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
+bindsym $mod+Mod1+Shift+r restart
+# exit i3 (logs you out of your X session)
+bindsym $mod+Mod1+Shift+e exec --no-startup-id "i3-navbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
 # change focus
 bindsym $mod+h focus left
