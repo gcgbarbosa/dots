@@ -1,19 +1,45 @@
+###################### ALIASES
+# just
+alias j=just
+
+# autocompletion for just
+alias jac='source <(just --completions zsh)'
+
 # add nvim 0.10!
 export PATH="$PATH:/opt/nvim-linux64/bin"
 alias vim=nvim
 alias vi=nvim
 
-# The next line updates PATH for the Google Cloud SDK.
-if [ -f '/opt/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/gcloud/google-cloud-sdk/path.zsh.inc'; fi
+## exa
+alias l='exa'
+alias la='exa -a'
+alias ll='exa -lah'
+alias ls='exa --color=auto'
 
-# The next line enables shell command completion for gcloud.
+# webcam aliasese
+alias wcd='sudo rmmod v4l2loopback'
+alias wce='sudo modprobe v4l2loopback exclusive_caps=1 max_buffers=2'
+alias wclc='gphoto2 --list-config'
+alias wcr='gphoto2 --stdout --capture-movie | ffmpeg -hwaccel nvdec -c:v mjpeg_cuvid -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video4'
+alias wcr-cpu='gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video4'
+alias wc-obs='sudo modprobe v4l2loopback exclusive_caps=1 card_label="OBS Virtual Camera"'
+
+# keyboard
+alias kb-int='setxkbmap -layout us -variant intl'
+alias kb-en='setxkbmap -layout us'
+
+############################ third party installs
+
+# Google Cloud SDK.
+if [ -f '/opt/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/gcloud/google-cloud-sdk/path.zsh.inc'; fi
+#  shell command completion for gcloud.
 if [ -f '/opt/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/gcloud/google-cloud-sdk/completion.zsh.inc'; fi
 
 # add go
 export PATH=/usr/local/go/bin:$PATH
 export PATH=$PATH:$HOME/go/bin
 
-# direnv stuff
+# direnv
 eval "$(direnv hook zsh)"
 
 # add NVM to manage NPM
@@ -32,9 +58,24 @@ export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 
-
 # Add local bins to path
 export PATH="/home/gcgbarbosa/.local/bin:$PATH"
+
+## make pytorch RNN's replicable
+# explanation here: https://pytorch.org/docs/stable/generated/torch.nn.RNN.html#torch.nn.RNN
+export CUBLAS_WORKSPACE_CONFIG=:16:8
+
+# enable starship
+eval "$(starship init zsh)"
+
+# pnpm
+export PNPM_HOME="/home/gcgbarbosa/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+# pnpm end
+
 
 ##
 # FZF does not use ripgrep by default
@@ -62,16 +103,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-
-## make pytorch RNN's replicable
-# explanation here: https://pytorch.org/docs/stable/generated/torch.nn.RNN.html#torch.nn.RNN
-export CUBLAS_WORKSPACE_CONFIG=:16:8
-
-
-# enable starship
-eval "$(starship init zsh)"
-
-
 # turn off all beeps
 unsetopt BEEP
 
@@ -80,37 +111,6 @@ export EDITOR=nvim
 
 # set GCC version to 7
 # export CC=gcc-7 CXX=g++-7
-
-
-# pnpm
-export PNPM_HOME="/home/gcgbarbosa/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-# pnpm end
-
-
-# aliases
-## exa aliases
-alias l='exa'
-alias la='exa -a'
-alias ll='exa -lah'
-alias ls='exa --color=auto'
-
-
-# webcam aliasese
-alias wcd='sudo rmmod v4l2loopback'
-alias wce='sudo modprobe v4l2loopback exclusive_caps=1 max_buffers=2'
-alias wclc='gphoto2 --list-config'
-alias wcr='gphoto2 --stdout --capture-movie | ffmpeg -hwaccel nvdec -c:v mjpeg_cuvid -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video4'
-alias wcr-cpu='gphoto2 --stdout --capture-movie | ffmpeg -i - -vcodec rawvideo -pix_fmt yuv420p -threads 0 -f v4l2 /dev/video4'
-alias wc-obs='sudo modprobe v4l2loopback exclusive_caps=1 card_label="OBS Virtual Camera"'
-
-alias kb-int='setxkbmap -layout us -variant intl'
-alias kb-en='setxkbmap -layout us'
-
-
 
 # Import colorscheme from 'wal' asynchronously
 # &   # Run the process in the background.
