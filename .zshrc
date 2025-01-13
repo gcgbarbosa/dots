@@ -1,4 +1,11 @@
 ###################### ALIASES
+
+# i dont remember 
+alias idr='history 1 | grep'
+
+# pnpm default
+alias npm='pnpm'
+
 # just
 alias j=just
 
@@ -29,6 +36,9 @@ alias kb-int='setxkbmap -layout us -variant intl'
 alias kb-en='setxkbmap -layout us'
 
 ############################ third party installs
+
+# mise environment manager
+eval "$(~/.local/bin/mise activate zsh)"
 
 # Google Cloud SDK.
 if [ -f '/opt/gcloud/google-cloud-sdk/path.zsh.inc' ]; then . '/opt/gcloud/google-cloud-sdk/path.zsh.inc'; fi
