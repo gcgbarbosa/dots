@@ -1,16 +1,15 @@
+
 ###################### ALIASES
 
 # i dont remember 
-alias idr='history 1 | grep'
+alias idk='history 1 | grep'
 
 # pnpm default
 alias npm='pnpm'
 
 # just
 alias j=just
-
-# autocompletion for just
-alias jac='source <(just --completions zsh)'
+alias jl='just -l'
 
 # add nvim 0.10!
 export PATH="$PATH:/opt/nvim-linux64/bin"
@@ -107,10 +106,6 @@ setopt appendhistory autocd extendedglob notify
 # End of lines configured by zsh-newuser-install
 
 
-# The following lines were added by compinstall
-zstyle :compinstall filename '/home/gcgbarbosa/.zshrc'
-autoload -Uz compinit
-compinit
 # End of lines added by compinstall
 
 # turn off all beeps
@@ -126,6 +121,12 @@ export EDITOR=nvim
 # &   # Run the process in the background.
 # ( ) # Hide shell job control messages.
 (cat ~/.cache/wal/sequences &)
+
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/gcgbarbosa/.zshrc'
+autoload -Uz compinit
+compinit
+
 
 
 # zplug plugin manager
