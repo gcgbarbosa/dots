@@ -1,5 +1,17 @@
 [user]
 	email = gcgbarbosa@gmail.com
 	name = gcgbarbosa
+[credentials]
+	helper = store
 [credential]
 	helper = store
+[core]
+	pager = delta
+[interactive]
+	diffFilter = delta --color-only
+[delta]
+	navigate = true
+  line-numbers = true
+[merge]
+	conflictStyle = zdiff3
+
