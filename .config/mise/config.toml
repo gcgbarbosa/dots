@@ -1,2 +1,6 @@
 [settings]
 experimental = true
+
+[tools]
+python = "3.12"
+uv = "latest"

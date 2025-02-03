@@ -1,6 +1,12 @@
 
 ###################### ALIASES
 
+# top is bottom
+alias htop='btm'
+
+# copy something
+alias ctrlc='xclip -sel clip'
+
 # i dont remember 
 alias idk='history 1 | grep'
 
