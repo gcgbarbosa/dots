@@ -1,0 +1,19 @@
+{
+  "notebook": {
+    "autoformat": false,
+    "expand": true,
+    "edit_mode": "vi",
+    "key_bindings": {
+      "euporie.core.app.app:BaseApp": {
+        "close-tab": "c-s-w"
+      }
+    },
+    "enable_language_servers": false,
+    "color_scheme": "black",
+    "show_cell_borders": true,
+    "show_side_bar": true,
+    "autocomplete": true,
+    "autoinspect": false,
+    "line_numbers": false
+  }
+}
