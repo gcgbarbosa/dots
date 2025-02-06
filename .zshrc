@@ -10,9 +10,6 @@ alias ctrlc='xclip -sel clip'
 # i dont remember 
 alias idk='history 1 | grep'
 
-# pnpm default
-alias npm='pnpm'
-
 # just
 alias j=just
 alias jl='just -l'
@@ -68,11 +65,6 @@ export PATH="/opt/structurizr:$PATH"
 # Make terminal compatible
 export TERM=xterm-256color
 
-# Add pyenv
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-
 # Add local bins to path
 export PATH="/home/gcgbarbosa/.local/bin:$PATH"
 
@@ -89,8 +81,10 @@ case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
 
+# pnpm default
+alias npm='pnpm'
+# pnpm end
 
 ##
 # FZF does not use ripgrep by default
@@ -101,7 +95,6 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
 
-
 ##
 # Lines configured by zsh-newuser-install
 #
@@ -111,8 +104,6 @@ SAVEHIST=10000
 setopt appendhistory autocd extendedglob notify
 # End of lines configured by zsh-newuser-install
 
-
-# End of lines added by compinstall
 
 # turn off all beeps
 unsetopt BEEP
@@ -132,8 +123,7 @@ export EDITOR=nvim
 zstyle :compinstall filename '/home/gcgbarbosa/.zshrc'
 autoload -Uz compinit
 compinit
-
-
+# End of lines added by compinstall
 
 # zplug plugin manager
 source ~/.zplug/init.zsh
