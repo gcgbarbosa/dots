@@ -1,0 +1,12 @@
+[Unit]
+Description=KMonad Keyboard Daemon
+After=network.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/kmonad /home/gcgbarbosa/.kmonad
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
+
