@@ -1,8 +1,11 @@
 
 ###################### ALIASES
 
+# find directories
+alias fd='fdfind'
+
 # top is bottom
-alias htop='btm'
+alias htop='btop'
 
 # copy something
 alias ctrlc='xclip -sel clip'

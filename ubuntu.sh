@@ -40,6 +40,20 @@ curl https://mise.run | sh
 # https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
+# zoxide
+curl -sSfL https://raw.githubusercontent.com/ajeetdsouza/zoxide/main/install.sh | sh
+
+# fzf fuzzy finder
+sudo apt install fzf
+
+# rg recursively search directories
+sudo apt install ripgrep
+
+# https://github.com/sharkdp/fd
+sudo apt install fd-find
+
+# https://github.com/aristocratos/btop
+sudo apt install btop
 
 ######################## EXTRAS
 # <https://github.com/extrawurst/gitui>

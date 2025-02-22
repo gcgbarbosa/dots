@@ -19,22 +19,6 @@ require("lazy").setup({
   spec = {
     -- add LazyVim and import its plugins
     { "LazyVim/LazyVim", import = "lazyvim.plugins" },
-
-    -- { import = "lazyvim.plugins.extras.lang.python" },
-    -- { import = "lazyvim.plugins.extras.lang.yaml" },
-    -- { import = "lazyvim.plugins.extras.lang.markdown" },
-    -- { import = "lazyvim.plugins.extras.lang.typescript" },
-    -- { import = "lazyvim.plugins.extras.lang.json" },
-    -- { import = "lazyvim.plugins.extras.lang.docker" },
-    --
-    -- { import = "lazyvim.plugins.extras.editor.refactoring" }, -- need to figure out how to use
-    -- { import = "lazyvim.plugins.extras.editor.overseer" },
-    -- -- { import = "lazyvim.plugins.extras.coding.codeium" },
-    -- { import = "lazyvim.plugins.extras.dap.core" }, -- debugging with dap
-    -- { import = "lazyvim.plugins.extras.test.core" },
-    --
-    -- { import = "lazyvim.plugins.extras.ui.mini-animate" },
-
     -- import/override with your plugins
     { import = "plugins" },
   },
