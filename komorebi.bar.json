@@ -3,10 +3,10 @@
   "monitor": {
     "index": 0,
     "work_area_offset": {
-      "left": -10,
-      "top": 40,
-      "right": -20,
-      "bottom": 30
+      "left": 0,
+      "top": 50,
+      "right": 0,
+      "bottom": 50
     }
   },
   "font_family": "JetBrains Mono",
@@ -20,7 +20,7 @@
       "Komorebi": {
         "workspaces": {
           "enable": true,
-          "hide_empty_workspaces": false
+          "hide_empty_workspaces": true
         },
         "layout": {
           "enable": true

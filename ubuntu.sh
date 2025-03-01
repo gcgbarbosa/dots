@@ -55,5 +55,8 @@ sudo apt install fd-find
 # https://github.com/aristocratos/btop
 sudo apt install btop
 
+# posting is an http client on the cli
+uv tool install --python 3.12 posting
+
 ######################## EXTRAS
 # <https://github.com/extrawurst/gitui>

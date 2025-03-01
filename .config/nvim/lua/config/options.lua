@@ -11,6 +11,5 @@ vim.g.lazyvim_python_ruff = "ruff"
 -- set text width for black
 vim.opt.textwidth = 125
 
--- let g:autoclose_on = 0
 vim.g.autoformat = false
 
