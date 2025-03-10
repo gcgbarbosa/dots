@@ -1,6 +1,10 @@
 
 ###################### ALIASES
 
+# redshift
+alias night='redshift -O 2000K'
+alias day='redshift -x'
+
 # find directories
 alias fd='fdfind'
 
