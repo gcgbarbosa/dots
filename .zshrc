@@ -70,7 +70,7 @@ export NVM_DIR="$HOME/.config/nvm"
 export PATH="/opt/structurizr:$PATH"
 
 # Make terminal compatible
-export TERM=xterm-256color
+# export TERM=xterm-256color
 
 # Add local bins to path
 export PATH="/home/gcgbarbosa/.local/bin:$PATH"
