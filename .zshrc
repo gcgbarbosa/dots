@@ -121,11 +121,6 @@ export EDITOR=nvim
 # set GCC version to 7
 # export CC=gcc-7 CXX=g++-7
 
-# Import colorscheme from 'wal' asynchronously
-# &   # Run the process in the background.
-# ( ) # Hide shell job control messages.
-(cat ~/.cache/wal/sequences &)
-
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/gcgbarbosa/.zshrc'
 autoload -Uz compinit
