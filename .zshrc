@@ -58,9 +58,6 @@ if [ -f '/opt/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/gcloud
 export PATH=/usr/local/go/bin:$PATH
 export PATH=$PATH:$HOME/go/bin
 
-# direnv
-eval "$(direnv hook zsh)"
-
 # add NVM to manage NPM
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
