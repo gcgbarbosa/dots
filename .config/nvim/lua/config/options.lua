@@ -9,7 +9,5 @@ vim.g.lazyvim_python_lsp = "pyright"
 -- Set to "ruff_lsp" to use the old LSP implementation version.
 vim.g.lazyvim_python_ruff = "ruff"
 -- set text width for black
-vim.opt.textwidth = 125
-
+vim.opt.textwidth = 128
 vim.g.autoformat = false
-
