@@ -58,5 +58,9 @@ sudo apt install btop
 # posting is an http client on the cli
 uv tool install --python 3.12 posting
 
+# useful for copying to clipboard from cli
+sudo apt install wl-clipboard
+
 ######################## EXTRAS
 # <https://github.com/extrawurst/gitui>
+
