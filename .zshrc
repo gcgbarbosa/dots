@@ -12,7 +12,7 @@ alias fd='fdfind'
 alias htop='btop'
 
 # copy something
-alias ctrlc='xclip -sel clip'
+alias gcllm='git diff --staged | wl-copy'
 
 # i dont remember 
 alias idk='history 1 | grep'
