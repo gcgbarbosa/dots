@@ -9,11 +9,12 @@
       }
     },
     "enable_language_servers": false,
-    "color_scheme": "black",
+    "color_scheme": "dark",
     "show_cell_borders": true,
     "show_side_bar": true,
     "autocomplete": true,
     "autoinspect": false,
-    "line_numbers": false
+    "line_numbers": false,
+    "wrap_cell_outputs": true
   }
 }
