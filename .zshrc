@@ -155,3 +155,4 @@ fi
 zplug load
 
 
+export PATH=$PATH:$HOME/.local/bin
