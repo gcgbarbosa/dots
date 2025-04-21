@@ -61,6 +61,9 @@ uv tool install --python 3.12 posting
 # useful for copying to clipboard from cli
 sudo apt install wl-clipboard
 
+# lazyjournal
+curl -sS https://raw.githubusercontent.com/Lifailon/lazyjournal/main/install.sh | bash
+
 ######################## EXTRAS
 # <https://github.com/extrawurst/gitui>
-
+# <https://activitywatch.net/>
