@@ -1,6 +1,9 @@
 
 ###################### ALIASES
 
+# kubernetes
+alias kubectl="minikube kubectl --"
+
 # redshift
 alias night='redshift -O 2000K'
 alias day='redshift -x'
@@ -11,8 +14,32 @@ alias fd='fdfind'
 # top is bottom
 alias htop='btop'
 
-# copy something
-alias gcllm='git diff --staged | wl-copy'
+# generate commit message
+# alias gcllm='git diff --staged | wl-copy'
+gcllm() {
+  # generate commit message
+  local msg
+  msg=$(
+    echo "Generate a conventional commit message for <diff>$(git diff --staged)</diff>. The output will be passed directly to git commit -F -" \
+      | llm \
+      | sed '/```/d'
+  )
+
+  # print message
+  printf "\nProposed commit message:\n---\n%s\n---\n" "$msg"
+
+  # ask if we want to proceed
+  printf "Proceed with commit? [y/N] " 
+  read -r answer
+
+  # move on
+  if [[ $answer =~ ^[Yy]$ ]]; then
+    # use a here-doc so newlines are preserved
+    git commit -F <(printf "%s\n" "$msg")
+  else
+    echo "Commit aborted."
+  fi
+}
 
 # i dont remember 
 alias idk='history 1 | grep'
