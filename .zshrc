@@ -54,10 +54,10 @@ alias vim=nvim
 alias vi=nvim
 
 ## exa
-alias l='exa'
-alias la='exa -a'
-alias ll='exa -lah'
-alias ls='exa --color=auto'
+alias l='lsd'
+alias la='lsd -a'
+alias ll='lsd -lah'
+alias ls='lsd --color=auto'
 
 # webcam aliasese
 alias wcd='sudo rmmod v4l2loopback'
