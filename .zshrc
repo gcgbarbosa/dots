@@ -97,7 +97,7 @@ export PATH="/opt/structurizr:$PATH"
 # export TERM=xterm-256color
 
 # Add local bins to path
-export PATH="/home/gcgbarbosa/.local/bin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
 
 ## make pytorch RNN's replicable
 # explanation here: https://pytorch.org/docs/stable/generated/torch.nn.RNN.html#torch.nn.RNN
@@ -107,7 +107,7 @@ export CUBLAS_WORKSPACE_CONFIG=:16:8
 eval "$(starship init zsh)"
 
 # pnpm
-export PNPM_HOME="/home/gcgbarbosa/.local/share/pnpm"
+export PNPM_HOME="$HOME/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
@@ -146,7 +146,7 @@ export EDITOR=nvim
 # export CC=gcc-7 CXX=g++-7
 
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/gcgbarbosa/.zshrc'
+zstyle :compinstall filename "$HOME/.zshrc"
 autoload -Uz compinit
 compinit
 # End of lines added by compinstall
@@ -182,4 +182,5 @@ fi
 zplug load
 
 
-export PATH=$PATH:$HOME/.local/bin
+# Added by Windsurf
+export PATH="/Users/gcgbarbosa/.codeium/windsurf/bin:$PATH"
