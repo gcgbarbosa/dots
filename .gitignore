@@ -4,3 +4,4 @@
 .assh/known_hosts.old
 .config/nvim/pack/
 
+.DS_Store
