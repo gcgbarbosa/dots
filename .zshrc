@@ -3,6 +3,9 @@
 # PATH SETUP 
 ##################################################################
 
+# java on macosx 
+export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home" 
+
 # Add local bins to path
 export PATH="$HOME/.local/bin:$PATH"
 
