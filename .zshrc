@@ -118,6 +118,7 @@ gcllm() {
   # move on
   if [[ $answer =~ ^[Yy]$ ]]; then
     # use a here-doc so newlines are preserved
+    echo $msg | cb copy
     git commit -F <(printf "%s\n" "$msg")
   else
     echo "Commit aborted."
