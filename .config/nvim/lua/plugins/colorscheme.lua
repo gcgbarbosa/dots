@@ -1,12 +1,19 @@
-return {
-  -- add gruvbox
-  { "ellisonleao/gruvbox.nvim" },
+-- return {
+--   -- add dracula
+--   { "Mofiqul/dracula.nvim" },
+--
+--   -- Configure LazyVim to load dracula
+--   {
+--     "LazyVim/LazyVim",
+--     opts = {
+--       colorscheme = "dracula",
+--     },
+--   },
+-- }
 
-  -- Configure LazyVim to load gruvbox
-  {
-    "LazyVim/LazyVim",
-    opts = {
-      colorscheme = "gruvbox",
-    },
-  },
+return {
+  "folke/tokyonight.nvim",
+  lazy = false,
+  priority = 1000,
+  opts = {},
 }

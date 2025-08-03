@@ -16,7 +16,11 @@ vim.api.nvim_create_autocmd("OptionSet", {
   callback = function()
     -- Only reset if changed to something other than 0
     if vim.o.cmdheight ~= 0 then
+      local lines = vim.o.cmdheight
       vim.o.cmdheight = 0
+      vim.o.lines = vim.o.lines + lines
+
+      vim.cmd("redraw!")
     end
   end,
 })
