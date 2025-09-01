@@ -3,6 +3,9 @@
 # PATH SETUP 
 ##################################################################
 
+# setting default editor
+# export EDITOR="nvim"
+
 # java on macosx 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home" 
 
@@ -183,6 +186,9 @@ if [ -f '/opt/gcloud/google-cloud-sdk/completion.zsh.inc' ]; then . '/opt/gcloud
 export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# activate fzf
+eval "$(fzf --zsh)"
 
 # FZF does not use ripgrep by default
 # We need to tel FZF to use ripgrep with FZF_DEFAULT
