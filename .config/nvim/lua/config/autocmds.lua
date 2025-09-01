@@ -18,7 +18,10 @@ vim.api.nvim_create_autocmd("OptionSet", {
     if vim.o.cmdheight ~= 0 then
       local lines = vim.o.cmdheight
       vim.o.cmdheight = 0
-      vim.o.lines = vim.o.lines + lines
+      vim.o.lines = vim.o.lines + 2
+
+      vim.o.columns = 300
+      vim.o.lines = 100
 
       vim.cmd("redraw!")
     end
