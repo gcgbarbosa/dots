@@ -1,0 +1,22 @@
+sharkdp/fd
+ducaale/xh
+BurntSushi/ripgrep
+sharkdp/bat
+rclone/rclone
+sharkdp/hyperfine
+tldr-pages/tldr
+lsd-rs/lsd
+dandavison/delta
+charmbracelet/glow
+junegunn/fzf
+ajeetdsouza/zoxide
+gitui-org/gitui
+sxyazi/yazi
+sarub0b0/kubetui
+rgwood/systemctl-tui
+chmln/sd
+mikefarah/yq
+jqlang/jq
+starship/starship
+Schniz/fnm
+neovim/neovim --tag=nightly
