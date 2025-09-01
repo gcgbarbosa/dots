@@ -19,4 +19,5 @@ mikefarah/yq
 jqlang/jq
 starship/starship
 Schniz/fnm
-neovim/neovim --tag=nightly
+jdx/mise
+
