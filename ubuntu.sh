@@ -4,9 +4,6 @@ sudo apt install golang-go
 # https://pnpm.io/
 curl -fsSL https://get.pnpm.io/install.sh | sh -
 
-# https://github.com/ogham/exa
-sudo apt install exa
-
 # better faster apt
 sudo apt install nala
 
@@ -31,12 +28,6 @@ sudo apt install nvtop
 # - <https://github.com/joouha/euporie>
 uv tool install euporie
 
-# https://github.com/papis/papis
-pip install papis
-
-# https://mise.jdx.dev/getting-started.html
-curl https://mise.run | sh
-
 # https://github.com/nvm-sh/nvm?tab=readme-ov-file#installing-and-updating
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 
@@ -57,9 +48,6 @@ sudo apt install btop
 
 # posting is an http client on the cli
 uv tool install --python 3.12 posting
-
-# useful for copying to clipboard from cli
-sudo apt install wl-clipboard
 
 # lazyjournal
 curl -sS https://raw.githubusercontent.com/Lifailon/lazyjournal/main/install.sh | bash

@@ -20,4 +20,4 @@ jqlang/jq
 starship/starship
 Schniz/fnm
 jdx/mise
-
+Lifailon/lazyjournal

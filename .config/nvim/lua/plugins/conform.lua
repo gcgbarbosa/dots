@@ -6,6 +6,7 @@ return {
       xml = { "xmllint" }, -- or "xmlformatter", depending on what Mason installed
       astro = { "prettier" },
       css = { "prettier" },
+      json = { "prettier" },
     },
   },
 }

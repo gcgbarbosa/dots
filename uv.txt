@@ -1,0 +1,5 @@
+# bibliography manager
+papis
+
+# jupyter on terminal
+euporie
