@@ -3,6 +3,10 @@
 # PATH SETUP 
 ##################################################################
 
+
+# mysql-client macosx
+export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
 # setting default editor
 # export EDITOR="nvim"
 
@@ -206,3 +210,4 @@ fi
 # make pytorch RNN's replicable
 # explanation here: https://pytorch.org/docs/stable/generated/torch.nn.RNN.html#torch.nn.RNN
 export CUBLAS_WORKSPACE_CONFIG=:16:8
+
