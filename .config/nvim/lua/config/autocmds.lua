@@ -8,22 +8,23 @@
 -- e.g. vim.api.nvim_del_augroup_by_name("lazyvim_wrap_spell")
 
 -- Ensure cmdheight stays at 0 for a minimal UI
-local group = vim.api.nvim_create_augroup("LazyVimCmdHeight", { clear = true })
-vim.api.nvim_create_autocmd("OptionSet", {
-  group = group,
-  pattern = "cmdheight",
-  desc = "Reset cmdheight to 0 if it gets increased",
-  callback = function()
-    -- Only reset if changed to something other than 0
-    if vim.o.cmdheight ~= 0 then
-      local lines = vim.o.cmdheight
-      vim.o.cmdheight = 0
-      vim.o.lines = vim.o.lines + 2
-
-      vim.o.columns = 300
-      vim.o.lines = 100
-
-      vim.cmd("redraw!")
-    end
-  end,
-})
+ 
+-- local group = vim.api.nvim_create_augroup("LazyVimCmdHeight", { clear = true })
+-- vim.api.nvim_create_autocmd("OptionSet", {
+--   group = group,
+--   pattern = "cmdheight",
+--   desc = "Reset cmdheight to 0 if it gets increased",
+--   callback = function()
+--     -- Only reset if changed to something other than 0
+--     if vim.o.cmdheight ~= 0 then
+--       local lines = vim.o.cmdheight
+--       vim.o.cmdheight = 0
+--       vim.o.lines = vim.o.lines + 2
+--
+--       vim.o.columns = 300
+--       vim.o.lines = 100
+--
+--       vim.cmd("redraw!")
+--     end
+--   end,
+-- })
