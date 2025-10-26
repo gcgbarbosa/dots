@@ -21,3 +21,4 @@ starship/starship
 Schniz/fnm
 jdx/mise
 Lifailon/lazyjournal
+mountain-loop/yaak
