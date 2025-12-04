@@ -1,10 +1,10 @@
 (defcfg
-  input  (iokit-name)
-  output (kext)
+  ;; input  (iokit-name)
+  ;; output (kext)
   ;; For Windows
   ;; input  (low-level-hook)
-  ;; input  (device-file "/dev/input/event3")
-  ;; output (uinput-sink "kmonad-input")
+  input  (device-file "/dev/input/event3")
+  output (uinput-sink "kmonad-input")
 
   ;; This option tells KMonad to let non-configured keys act normal
   fallthrough true
