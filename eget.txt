@@ -22,3 +22,5 @@ Schniz/fnm
 jdx/mise
 Lifailon/lazyjournal
 mountain-loop/yaak
+Byron/dua-cli
+karol-broda/snitch

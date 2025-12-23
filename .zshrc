@@ -3,12 +3,17 @@
 # PATH SETUP 
 ##################################################################
 
+# self-hosted llm
+export PATH="$PATH:$HOME/.lmstudio/bin"
+
+# code editor
+export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
 # mysql-client macosx
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
 # setting default editor
-# export EDITOR="nvim"
+export EDITOR="nvim"
 
 # java on macosx 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home" 
@@ -210,4 +215,5 @@ fi
 # make pytorch RNN's replicable
 # explanation here: https://pytorch.org/docs/stable/generated/torch.nn.RNN.html#torch.nn.RNN
 export CUBLAS_WORKSPACE_CONFIG=:16:8
+
 
