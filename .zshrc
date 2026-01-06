@@ -3,20 +3,26 @@
 # PATH SETUP 
 ##################################################################
 
-# self-hosted llm
-export PATH="$PATH:$HOME/.lmstudio/bin"
+if [[ "$(uname -s)" == "Linux" ]]; then
+    if command -v keychain > /dev/null 2>&1; then
+        eval $(keychain --eval --agents ssh id_rsa)
+    fi
+fi
+
+if [[ "$(uname -s)" == "Darwin" ]]; then
+  # self-hosted llm
+  export PATH="$PATH:$HOME/.lmstudio/bin"
+  # mysql-client macosx
+  export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+  # java on macosx 
+  export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home" 
+fi
 
 # code editor
 export PATH="$HOME/.antigravity/antigravity/bin:$PATH"
 
-# mysql-client macosx
-export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
-
 # setting default editor
 export EDITOR="nvim"
-
-# java on macosx 
-export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home" 
 
 # Add local bins to path
 export PATH="$HOME/.local/bin:$PATH"
@@ -34,45 +40,8 @@ case ":$PATH:" in
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
 
-# Added by Windsurf
-export PATH="$HOME/.codeium/windsurf/bin:$PATH"
-
 # The following lines have been added by Docker Desktop to enable Docker CLI completions.
-fpath=(/Users/gcgbarbosa/.docker/completions $fpath)
-
-##################################################################
-# ZPLUG
-##################################################################
-
-# zplug plugin manager
-source ~/.zplug/init.zsh
-# Async for zsh, used by pure
-zplug "mafredri/zsh-async", from:github, defer:0
-# Load completion library for those sweet [tab] squares
-zplug "lib/completion", from:oh-my-zsh
-# supports oh-my-zsh-plugins
-zplug "plugins/git", from:oh-my-zsh
-# show a message "you should use" for an alias
-zplug "MichaelAquilina/zsh-you-should-use"
-# install z to jump into directories
-zplug "agkozak/zsh-z"
-# suggests commands as you type based on your history and completions
-zplug "zsh-users/zsh-autosuggestions"
-# 
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
-
-# autocompletion
-#zplug "marlonrichert/zsh-autocomplete"
-# install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-  printf "Install? [y/N]: "
-  if read -q; then
-    echo; zplug install
-  fi
-fi
-#
-# zplug load --verbose
-zplug load
+fpath=($HOME/.docker/completions $fpath)
 
 
 ##################################################################
@@ -97,8 +66,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-
-
 ##################################################################
 # ALIASES
 ##################################################################
@@ -110,7 +77,6 @@ alias kubectl="minikube kubectl --"
 alias htop='btop'
 
 # generate commit message
-# alias gcllm='git diff --staged | wl-copy'
 gcllm() {
   # generate commit message
   local msg
@@ -136,16 +102,6 @@ gcllm() {
     echo "Commit aborted."
   fi
 }
-
-# i dont remember 
-hgrep() {
-  history 1 | grep --color=always -i "$1"
-}
-alias idk='hgrep'
-
-# just
-alias j=just
-alias jl='just -l'
 
 alias vim=nvim
 alias vi=nvim
@@ -215,5 +171,40 @@ fi
 # make pytorch RNN's replicable
 # explanation here: https://pytorch.org/docs/stable/generated/torch.nn.RNN.html#torch.nn.RNN
 export CUBLAS_WORKSPACE_CONFIG=:16:8
+
+
+##################################################################
+# ZPLUG
+##################################################################
+
+# zplug plugin manager
+source ~/.zplug/init.zsh
+# Async for zsh, used by pure
+zplug "mafredri/zsh-async", from:github, defer:0
+# Load completion library for those sweet [tab] squares
+zplug "lib/completion", from:oh-my-zsh
+# supports oh-my-zsh-plugins
+zplug "plugins/git", from:oh-my-zsh
+# show a message "you should use" for an alias
+zplug "MichaelAquilina/zsh-you-should-use"
+# install z to jump into directories
+zplug "agkozak/zsh-z"
+# suggests commands as you type based on your history and completions
+zplug "zsh-users/zsh-autosuggestions"
+# 
+zplug "zsh-users/zsh-syntax-highlighting", defer:2
+
+# autocompletion
+#zplug "marlonrichert/zsh-autocomplete"
+# install plugins if there are plugins that have not been installed
+if ! zplug check --verbose; then
+  printf "Install? [y/N]: "
+  if read -q; then
+    echo; zplug install
+  fi
+fi
+#
+# zplug load --verbose
+zplug load
 
 
